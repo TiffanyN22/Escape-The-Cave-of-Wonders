@@ -1,0 +1,30 @@
+﻿<Properties StartupConfiguration="{C9C8D2B1-F285-B0CC-DAEA-DDB55AE2B422}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI/Inventory_UI.cs">
+    <Files>
+      <File FileName="Assets/Scripts/PaperDragAndDrop.cs" Line="17" Column="36" />
+      <File FileName="Assets/Scripts/UI/Inventory_UI.cs" Line="63" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="EscapeTheCaveOfWonders" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="UI" expanded="True">
+                  <Node name="Inventory_UI.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="e9113f3a-048e-4708-bf75-8a229f3ab6c1" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
