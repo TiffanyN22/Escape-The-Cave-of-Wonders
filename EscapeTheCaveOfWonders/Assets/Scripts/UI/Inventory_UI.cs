@@ -23,11 +23,6 @@ public class Inventory_UI : MonoBehaviour
     }
     public void Start()
     {
-        //if (inventoryPanel != null) //if inventory
-        //if (slots.Count == player.inventory.slots.Count) 
-        //{
-            //inventoryPanel.SetActive(false);
-        //}
         inventory = GameManager.instance.player.inventory.GetInventoryByName(inventoryName);
 
         SetUpSlots();

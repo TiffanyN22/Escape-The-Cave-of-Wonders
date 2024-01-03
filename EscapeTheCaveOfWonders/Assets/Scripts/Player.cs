@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
                     if (tileName == "Interactable" && inventory.toolbar.selectedSlot.itemName == "Hoe")
                     {
                         tileManager.SetInteracted(position);
+                        //GameManager.instance.uiManager.TogglePaperStand(); //TODO: change to paper stand + paper
                     }
                 }
 

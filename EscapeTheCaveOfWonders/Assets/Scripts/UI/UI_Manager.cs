@@ -12,6 +12,7 @@ public class UI_Manager : MonoBehaviour
     public GameObject inventoryPanel;
     public GameObject removeItemPanel;
     public GameObject paperStand;
+    public GameObject gobletStand;
 
     public static Slot_UI draggedSlot;
     public static Image draggedIcon;
@@ -26,15 +27,21 @@ public class UI_Manager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.B))
         {
-            if(!paperStand.activeSelf){
+            if(!paperStand.activeSelf && !gobletStand.activeSelf){
                 ToggleInventory();
             }
+            else if(gobletStand.activeSelf){
+                ToggleGobletStand(); //close goblet stand if it's open
+            }
             else{
-                TogglePaperStand();
+                TogglePaperStand(); //close paper stand if it's open
             }
         }
         if(Input.GetKeyDown(KeyCode.P)){ //TODO: open paper stand with in-game element
             TogglePaperStand();
+        }
+        if(Input.GetKeyDown(KeyCode.G)){ //TODO: open goblet stand with in-game element
+            ToggleGobletStand();
         }
 
         if (Input.GetKey(KeyCode.LeftShift))
@@ -66,14 +73,7 @@ public class UI_Manager : MonoBehaviour
 
         if (removeItemPanel != null)
         {
-            if (!removeItemPanel.activeSelf)
-            {
-                removeItemPanel.SetActive(true);
-            }
-            else
-            {
-                removeItemPanel.SetActive(false);
-            }
+            removeItemPanel.SetActive(!removeItemPanel.activeSelf);
         }
     }
 
@@ -82,6 +82,13 @@ public class UI_Manager : MonoBehaviour
             return;
         }
         paperStand.SetActive(!paperStand.activeSelf);
+    }
+
+    public void ToggleGobletStand(){
+        if(!gobletStand){
+            return;
+        }
+        gobletStand.SetActive(!gobletStand.activeSelf);
     }
 
     public void RefreshInventoryUI(string inventoryName)
