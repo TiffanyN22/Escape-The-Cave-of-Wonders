@@ -11,6 +11,7 @@ public class UI_Manager : MonoBehaviour
 
     public GameObject inventoryPanel;
     public GameObject removeItemPanel;
+    public GameObject paperStand;
 
     public static Slot_UI draggedSlot;
     public static Image draggedIcon;
@@ -25,8 +26,17 @@ public class UI_Manager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.B))
         {
-            ToggleInventory();
+            if(!paperStand.activeSelf){
+                ToggleInventory();
+            }
+            else{
+                TogglePaperStand();
+            }
         }
+        if(Input.GetKeyDown(KeyCode.P)){ //TODO: open paper stand with in-game element
+            TogglePaperStand();
+        }
+
         if (Input.GetKey(KeyCode.LeftShift))
         {
             dragSingle = true;
@@ -65,6 +75,13 @@ public class UI_Manager : MonoBehaviour
                 removeItemPanel.SetActive(false);
             }
         }
+    }
+
+    public void TogglePaperStand(){
+        if(!paperStand){
+            return;
+        }
+        paperStand.SetActive(!paperStand.activeSelf);
     }
 
     public void RefreshInventoryUI(string inventoryName)
