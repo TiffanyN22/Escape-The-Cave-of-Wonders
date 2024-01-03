@@ -10,6 +10,7 @@ public class UI_Manager : MonoBehaviour
     public List<Inventory_UI> inventoryUIs;
 
     public GameObject inventoryPanel;
+    public GameObject removeItemPanel;
 
     public static Slot_UI draggedSlot;
     public static Image draggedIcon;
@@ -50,6 +51,18 @@ public class UI_Manager : MonoBehaviour
             else
             {
                 inventoryPanel.SetActive(false);
+            }
+        }
+
+        if (removeItemPanel != null)
+        {
+            if (!removeItemPanel.activeSelf)
+            {
+                removeItemPanel.SetActive(true);
+            }
+            else
+            {
+                removeItemPanel.SetActive(false);
             }
         }
     }

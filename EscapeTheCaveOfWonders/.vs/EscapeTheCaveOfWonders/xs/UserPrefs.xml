@@ -1,8 +1,10 @@
 ﻿<Properties StartupConfiguration="{C9C8D2B1-F285-B0CC-DAEA-DDB55AE2B422}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI/Inventory_UI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI/UI_Manager.cs">
     <Files>
-      <File FileName="Assets/Scripts/PaperDragAndDrop.cs" Line="17" Column="36" />
-      <File FileName="Assets/Scripts/UI/Inventory_UI.cs" Line="63" Column="1" />
+      <File FileName="Assets/Scripts/PaperDragAndDrop.cs" Line="32" Column="1" />
+      <File FileName="Assets/Scripts/UI/Inventory_UI.cs" Line="61" Column="23" />
+      <File FileName="Assets/Scripts/UI/UI_Manager.cs" Line="13" Column="31" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,7 +13,7 @@
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
                 <Node name="UI" expanded="True">
-                  <Node name="Inventory_UI.cs" selected="True" />
+                  <Node name="UI_Manager.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
