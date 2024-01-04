@@ -33,7 +33,7 @@ public class Inventory
                 return false;
             }
         }
-        public bool CanAddItem(string itemName )
+        public bool CanAddItem(string itemName)
         {
             return (this.itemName == itemName && count < maxAllowed);
         }

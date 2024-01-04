@@ -14,6 +14,7 @@ public class UI_Manager : MonoBehaviour
     public GameObject paperStand;
     public GameObject gobletStand;
     public GameObject tradePanel;
+    public GameObject hourglassPuzzlePanel;
 
     public static Slot_UI draggedSlot;
     public static Image draggedIcon;
@@ -38,6 +39,9 @@ public class UI_Manager : MonoBehaviour
             else if(tradePanel.activeSelf){
                 ToggleTradePanel();
             }
+            else if (hourglassPuzzlePanel.activeSelf){
+                ToggleHourglassPuzzlePanel();
+            }
             else{
                 ToggleInventory();
             }
@@ -49,8 +53,11 @@ public class UI_Manager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.G)){ //TODO: open goblet stand with in-game element
             ToggleGobletStand();
         }
-        if(Input.GetKeyDown(KeyCode.T)){ //TODO: open goblet stand with in-game element
+        if(Input.GetKeyDown(KeyCode.T)){ //TODO: open trade panel with in-game element
             ToggleTradePanel();
+        }
+        if(Input.GetKeyDown(KeyCode.H)){ //TODO: open swapping puzzle with in-game element
+            ToggleHourglassPuzzlePanel();
         }
 
         if (Input.GetKey(KeyCode.LeftShift))
@@ -105,6 +112,13 @@ public class UI_Manager : MonoBehaviour
             return;
         }
         tradePanel.SetActive(!tradePanel.activeSelf);
+    }
+
+    public void ToggleHourglassPuzzlePanel(){
+        if(hourglassPuzzlePanel == null){
+            return;
+        }
+        hourglassPuzzlePanel.SetActive(!hourglassPuzzlePanel.activeSelf);
     }
 
     public void RefreshInventoryUI(string inventoryName)
