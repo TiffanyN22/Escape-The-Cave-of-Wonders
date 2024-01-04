@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
     public InventoryManager inventory;
     private TileManager tileManager;
 
+    private string[] miningDrops = {"Coin", "Scroll", "Coin", "Coin", "Scroll", "Scroll", "Coin", "Scroll", "Scroll", "Coin"};
+    private int rocksMined = 0;
+
     private void Start()
     {
         tileManager = GameManager.instance.tileManager;
@@ -35,6 +38,13 @@ public class Player : MonoBehaviour
                 {
                     if (tileName == "Interactable" && inventory.toolbar.selectedSlot.itemName == "Hoe")
                     {
+                        //TODO: this logic with the breaking stone with pickaxe
+                        if(rocksMined < miningDrops.Length){
+                            Item dropItem = GameManager.instance.itemManager.GetItemByName(miningDrops[rocksMined]);
+                            GameManager.instance.player.DropItem(dropItem);
+                            rocksMined++;
+                        }
+
                         tileManager.SetInteracted(position);
                     } 
                     else if (tileName == "Paper_Stand_Interactable" && inventory.toolbar.selectedSlot.itemName == "Scroll"
@@ -49,15 +59,8 @@ public class Player : MonoBehaviour
                         Item enchantedPickaxe = GameManager.instance.itemManager.GetItemByName("Red Gem");
                         inventory.toolbar.selectedSlot.AddItem(enchantedPickaxe);
                         GameManager.instance.uiManager.RefreshInventoryUI("Toolbar");
-                        Debug.Log("Stream interactable!");
                     }
                 }
-
-                //if (GameManager.instance.tileManager.IsInteractable(position))
-                //{
-                //    Debug.Log("Tile is interactable");
-                //    GameManager.instance.tileManager.SetInteracted(position);
-                //}
             }
         } 
     }

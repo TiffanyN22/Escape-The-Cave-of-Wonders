@@ -16607,7 +16607,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Trade me 9 gold for a carpet that will allow you  to soar to new heights
+  m_text: Trade me 5 gold for a carpet that will allow you  to soar to new heights
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -25200,6 +25200,7 @@ MonoBehaviour:
   interactableMap: {fileID: 1123465670}
   hiddenInteractableTile: {fileID: 11400000, guid: 3be996034f48d4634b80caef37f68985, type: 2}
   hiddenPaperStandInteractableTile: {fileID: 11400000, guid: 3c3587306898c48c2b4d0c163648c2ac, type: 2}
+  hiddenStreamInteractableTile: {fileID: 11400000, guid: 908ee7231c7c14b89a8a1361f007e8ec, type: 2}
   plowedTile: {fileID: 11400000, guid: 41cce5239f73a4de287a8489f9b41ca0, type: 2}
 --- !u!114 &2015404960
 MonoBehaviour:

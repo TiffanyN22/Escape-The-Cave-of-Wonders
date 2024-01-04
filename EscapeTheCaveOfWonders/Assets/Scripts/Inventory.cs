@@ -158,8 +158,7 @@ public class Inventory
             Slot toSlot = toInventory.slots[toIndex];
             // Debug.Log("trading!");
 
-            //TODO: require 9 coins
-            int tradeCoinsRequired = 2;
+            int tradeCoinsRequired = 5;
             if(toSlot.itemName == "Coin" && toSlot.count >= tradeCoinsRequired){
                 //Gives user flying carpet
                 Item carpet = GameManager.instance.itemManager.GetItemByName("Flying Carpet");
