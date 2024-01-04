@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.4478, y: -2.0397, z: 0}
-  m_LocalScale: {x: 8.388361, y: 6.662656, z: 3.9435668}
+  m_LocalScale: {x: 1.9734868, y: 1.567489, z: 0.92778283}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -227433096, guid: 8ade0def50eb94777a11554cbd47582d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7d3262640795e437198ca932e49c4e55, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -123,12 +123,12 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.031290445, y: 0.040946834}
-  - {x: -0.03133032, y: -0.038637176}
-  - {x: -0.027534783, y: -0.038517058}
-  - {x: 0.031552605, y: -0.039427523}
-  - {x: 0.031567935, y: 0.039826}
-  - {x: -0.030999461, y: 0.04064356}
+  - {x: -0.13928421, y: 0.16024457}
+  - {x: -0.1390351, y: 0.15788676}
+  - {x: -0.13976066, y: -0.15802911}
+  - {x: 0.102968715, y: -0.15858623}
+  - {x: 0.09946095, y: 0.15980826}
+  - {x: -0.1396235, y: 0.16082564}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0

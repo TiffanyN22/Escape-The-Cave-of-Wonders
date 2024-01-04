@@ -15,7 +15,6 @@ public class PaperDragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, 
     {
         //makes image transparent
         image.color = new Color32(255, 255, 255, 170);
-        Debug.Log("paper drag and drop: Begin on drag running");
     }
     public void OnDrag(PointerEventData eventData)
     {
@@ -32,7 +31,6 @@ public class PaperDragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, 
 
     void Start()
     {
-        Debug.Log("Paper drag and drop starts");
         rectTransform = GetComponent<RectTransform>();
         image = GetComponent<Image>();
     }

@@ -1,0 +1,536 @@
+fileFormatVersion: 2
+guid: 24e48935f44aa4abb90b02b171107c6e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: River paper clue_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3155.3335
+        width: 1183.1666
+        height: 1577.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a9cec7fb359452f80f5f911eb1d141
+      internalID: 1348141172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: River paper clue_1
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 3155.3335
+        width: 1183.1666
+        height: 1577.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 648b1935ecc664e23a8da82b7066c4ab
+      internalID: 49156352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: River paper clue_2
+      rect:
+        serializedVersion: 2
+        x: 2366
+        y: 3155.3335
+        width: 1183.1666
+        height: 1577.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc880fce2adeb46e7bfbb410aa75d2d7
+      internalID: 134143287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: River paper clue_3
+      rect:
+        serializedVersion: 2
+        x: 3549
+        y: 3155.3335
+        width: 1183.1666
+        height: 1577.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d6a9feee06024413b0e058ea36ae73b
+      internalID: -90520010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: River paper clue_4
+      rect:
+        serializedVersion: 2
+        x: 4732
+        y: 3155.3335
+        width: 1183.1666
+        height: 1577.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68c15e44cb45c4d97974912e4de27e08
+      internalID: -1604240659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: River paper clue_5
+      rect:
+        serializedVersion: 2
+        x: 5915
+        y: 3155.3335
+        width: 1183.1666
+        height: 1577.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dfde502f82214a3c8db0725ddd12ab7
+      internalID: -32166171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: River paper clue_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1578.3334
+        width: 1183.1666
+        height: 1577.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f427974c60b0247878b18703aa1e84aa
+      internalID: 923145380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: River paper clue_7
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 1578.3334
+        width: 1183.1666
+        height: 1577.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bd53c498049e4e26b24e746aff9c22c
+      internalID: 943285403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: River paper clue_8
+      rect:
+        serializedVersion: 2
+        x: 2366
+        y: 1578.3334
+        width: 1183.1666
+        height: 1577.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 955c73069ccfd4e2195de7cabc5198f7
+      internalID: -1081036254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: River paper clue_9
+      rect:
+        serializedVersion: 2
+        x: 3549
+        y: 1578.3334
+        width: 1183.1666
+        height: 1577.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad05af4c08a3c486eb731e6f3848510f
+      internalID: -1837968057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: River paper clue_10
+      rect:
+        serializedVersion: 2
+        x: 4732
+        y: 1578.3334
+        width: 1183.1666
+        height: 1577.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be1c5f293136145fa82c05c5140d15eb
+      internalID: -794700977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: River paper clue_11
+      rect:
+        serializedVersion: 2
+        x: 5915
+        y: 1578.3334
+        width: 1183.1666
+        height: 1577.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1070d5fb110b43719afc1f442d12eb8
+      internalID: -747228159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: River paper clue_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.333374
+        width: 1183.1666
+        height: 1577.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad3d14eee1ac343b2b8c6ee6c32abb80
+      internalID: -332863894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: River paper clue_13
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 1.333374
+        width: 1183.1666
+        height: 1577.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c9dc0a2c9a3d45d3bb476967746f869
+      internalID: 1332504924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: River paper clue_14
+      rect:
+        serializedVersion: 2
+        x: 2366
+        y: 1.333374
+        width: 1183.1666
+        height: 1577.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 173e95adfb0c54b3a8acb333c8a12886
+      internalID: -166569124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: River paper clue_15
+      rect:
+        serializedVersion: 2
+        x: 3549
+        y: 1.333374
+        width: 1183.1666
+        height: 1577.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80d936cd5cc3040d5b492c4f629af24a
+      internalID: 1425706730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: River paper clue_16
+      rect:
+        serializedVersion: 2
+        x: 4732
+        y: 1.333374
+        width: 1183.1666
+        height: 1577.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ce764c55b2a94cbaa8de706fd5e784d
+      internalID: -2066386456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: River paper clue_17
+      rect:
+        serializedVersion: 2
+        x: 5915
+        y: 1.333374
+        width: 1183.1666
+        height: 1577.6666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2527f908e61714ff4ac5ac695f2eea24
+      internalID: 829872485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      River paper clue_0: 1348141172
+      River paper clue_1: 49156352
+      River paper clue_10: -794700977
+      River paper clue_11: -747228159
+      River paper clue_12: -332863894
+      River paper clue_13: 1332504924
+      River paper clue_14: -166569124
+      River paper clue_15: 1425706730
+      River paper clue_16: -2066386456
+      River paper clue_17: 829872485
+      River paper clue_2: 134143287
+      River paper clue_3: -90520010
+      River paper clue_4: -1604240659
+      River paper clue_5: -32166171
+      River paper clue_6: 923145380
+      River paper clue_7: 943285403
+      River paper clue_8: -1081036254
+      River paper clue_9: -1837968057
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
