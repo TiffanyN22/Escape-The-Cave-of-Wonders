@@ -13,6 +13,7 @@ public class UI_Manager : MonoBehaviour
     public GameObject removeItemPanel;
     public GameObject paperStand;
     public GameObject gobletStand;
+    public GameObject tradePanel;
 
     public static Slot_UI draggedSlot;
     public static Image draggedIcon;
@@ -27,21 +28,29 @@ public class UI_Manager : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.B))
         {
-            if(!paperStand.activeSelf && !gobletStand.activeSelf){
-                ToggleInventory();
+            //Close whichever is open
+            if(paperStand.activeSelf){
+                TogglePaperStand();
             }
             else if(gobletStand.activeSelf){
-                ToggleGobletStand(); //close goblet stand if it's open
+                ToggleGobletStand();
+            }
+            else if(tradePanel.activeSelf){
+                ToggleTradePanel();
             }
             else{
-                TogglePaperStand(); //close paper stand if it's open
+                ToggleInventory();
             }
         }
+
         if(Input.GetKeyDown(KeyCode.P)){ //TODO: open paper stand with in-game element
             TogglePaperStand();
         }
         if(Input.GetKeyDown(KeyCode.G)){ //TODO: open goblet stand with in-game element
             ToggleGobletStand();
+        }
+        if(Input.GetKeyDown(KeyCode.T)){ //TODO: open goblet stand with in-game element
+            ToggleTradePanel();
         }
 
         if (Input.GetKey(KeyCode.LeftShift))
@@ -91,6 +100,13 @@ public class UI_Manager : MonoBehaviour
         gobletStand.SetActive(!gobletStand.activeSelf);
     }
 
+    public void ToggleTradePanel(){
+        if(tradePanel == null){
+            return;
+        }
+        tradePanel.SetActive(!tradePanel.activeSelf);
+    }
+
     public void RefreshInventoryUI(string inventoryName)
     {
         if (inventoryUIByName.ContainsKey(inventoryName))
@@ -101,8 +117,10 @@ public class UI_Manager : MonoBehaviour
 
     public void RefreshAll()
     {
+        // Debug.Log("Refresh all");
         foreach(KeyValuePair<string, Inventory_UI> keyValuePair in inventoryUIByName)
         {
+            // Debug.Log(keyValuePair.Key);
             keyValuePair.Value.Refresh();
         }
     }

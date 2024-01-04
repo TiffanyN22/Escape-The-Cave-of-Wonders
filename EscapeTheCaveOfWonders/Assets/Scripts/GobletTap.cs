@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class GobletTap : MonoBehaviour
 {
-    int[] correctOrder = { 3, 0, 2, 5, 1, 4 };
-    // int[] clickOrder = new int[6];
-    int correctCount = 0;
+    private int[] correctOrder = { 3, 0, 2, 5, 1, 4 };
+    private int correctCount = 0;
     
     public void click(int gobletID){
-        // clickOrder[correctCount] = gobletID;
+        // TODO: play sound on click
 
         if(correctOrder[correctCount] == gobletID){
             correctCount++;
@@ -22,6 +21,12 @@ public class GobletTap : MonoBehaviour
             correctCount = 0;
         }
 
+        return;
+    }
+
+    public void showGobletStand(){
+        Debug.Log("Show goblet stand running");
+        GameManager.instance.uiManager.ToggleGobletStand();
         return;
     }
 }

@@ -34,6 +34,7 @@ public class Inventory_UI : MonoBehaviour
     {
         if (slots.Count == inventory.slots.Count)
         {
+            // Debug.Log("Refresh with count " + inventory.slots.Count);
             for(int i = 0; i < slots.Count; i++)
             {
                 if(inventory.slots[i].itemName != "")
