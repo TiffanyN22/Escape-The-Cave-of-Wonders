@@ -7,6 +7,7 @@ public class TileManager : MonoBehaviour
 {
     [SerializeField] private Tilemap interactableMap;
     [SerializeField] private Tile hiddenInteractableTile;
+    [SerializeField] private Tile hiddenPaperStandInteractableTile;
     [SerializeField] private Tile plowedTile;
 
     void Start()
@@ -17,6 +18,9 @@ public class TileManager : MonoBehaviour
             if (tile != null && tile.name == "Interactable_Visible")
             {
                 interactableMap.SetTile(position, hiddenInteractableTile);
+            }
+            else if ((tile != null && tile.name == "Paper_Stand_Interactable_Visible")){
+                interactableMap.SetTile(position, hiddenPaperStandInteractableTile);
             }
         }
     }

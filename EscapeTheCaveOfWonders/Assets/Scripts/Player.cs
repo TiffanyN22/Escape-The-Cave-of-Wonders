@@ -36,7 +36,11 @@ public class Player : MonoBehaviour
                     if (tileName == "Interactable" && inventory.toolbar.selectedSlot.itemName == "Hoe")
                     {
                         tileManager.SetInteracted(position);
-                        //GameManager.instance.uiManager.TogglePaperStand(); //TODO: change to paper stand + paper
+                    } 
+                    else if (tileName == "Paper_Stand_Interactable" && inventory.toolbar.selectedSlot.itemName == "Scroll"
+                        && inventory.toolbar.selectedSlot.count >= 2) //TODO: count is 9
+                    {
+                        GameManager.instance.uiManager.TogglePaperStand();
                     }
                 }
 
