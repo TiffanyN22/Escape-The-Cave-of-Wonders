@@ -67,6 +67,12 @@ public class Inventory
                 }
             }
         }
+
+        public void RemoveAll(){
+            count = 0;
+            icon = null;
+            itemName = "";
+        }
     }
 
     public List<Slot> slots = new List<Slot>();
@@ -82,7 +88,7 @@ public class Inventory
             slots.Add(slot);
         }
     }
-
+    
     public void Add(Item item)
     {
         //check if item exists and can add
@@ -134,6 +140,7 @@ public class Inventory
                 toSlot.AddItem(fromSlot.itemName, fromSlot.icon, fromSlot.maxAllowed);
                 fromSlot.RemoveItem();
             }
+            CheckTradeSuccess(toIndex, toInventory);
         }
     }
 
@@ -142,6 +149,24 @@ public class Inventory
         if(slots != null && slots.Count > 0)
         {
             selectedSlot = slots[index];
+        }
+    }
+
+    //TODO: move to separate file??
+    public void CheckTradeSuccess(int toIndex, Inventory toInventory){
+        //means that its trade --> make more official way with name?
+        if(toInventory.slots.Count == 1){
+            Slot toSlot = toInventory.slots[toIndex];
+            Debug.Log("trading!");
+
+            //TODO: MAKE COINS
+            if(toSlot.itemName == "Carrot Seed" && toSlot.count >= 2){
+                Debug.Log("trade success!");
+                Item gem = GameManager.instance.itemManager.GetItemByName("Carrot Seed");
+                GameManager.instance.player.DropItem(gem);
+                GameManager.instance.uiManager.ToggleTradePanel();
+                toSlot.RemoveAll();
+            }
         }
     }
 
