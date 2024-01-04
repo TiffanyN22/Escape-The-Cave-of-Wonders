@@ -152,7 +152,6 @@ public class Inventory
         }
     }
 
-    //TODO: move to separate file??
     public void CheckTradeSuccess(int toIndex, Inventory toInventory){
         //means that its trade --> make more official way with name?
         if(toInventory.slots.Count == 1){
