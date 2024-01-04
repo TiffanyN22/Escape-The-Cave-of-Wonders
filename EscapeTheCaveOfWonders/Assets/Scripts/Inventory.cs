@@ -76,7 +76,8 @@ public class Inventory
     }
 
     public List<Slot> slots = new List<Slot>();
-    public Slot selectedSlot = null; //TODO: make private
+    public Slot selectedSlot = new Slot(); //TODO: make private
+    private string prevSelectedName = "";
 
     //constructor
     public Inventory(int numSlots)
@@ -148,12 +149,14 @@ public class Inventory
     {
         if(slots != null && slots.Count > 0)
         {
+            prevSelectedName = selectedSlot.itemName;
             selectedSlot = slots[index];
+            checkMagicCarpet();
         }
     }
 
     public void CheckTradeSuccess(int toIndex, Inventory toInventory){
-        //means that its trade --> make more official way with name?
+        //slots count 1 means that its trade inventory --> make more official way with name?
         if(toInventory.slots.Count == 1){
             Slot toSlot = toInventory.slots[toIndex];
             // Debug.Log("trading!");
@@ -166,6 +169,15 @@ public class Inventory
                 GameManager.instance.uiManager.ToggleTradePanel(); //close trade panel
                 toSlot.RemoveAll(); //removes coins from trade panel
             }
+        }
+    }
+
+    private void checkMagicCarpet(){
+        if(selectedSlot.itemName == "Flying Carpet"){
+            Physics2D.IgnoreLayerCollision(3,6);
+        }
+        else if(prevSelectedName == "Flying Carpet"){
+            Physics2D.IgnoreLayerCollision(3,6, false);
         }
     }
 

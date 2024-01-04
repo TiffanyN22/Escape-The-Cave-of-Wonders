@@ -40,9 +40,8 @@ public class Player : MonoBehaviour
                     {
                         //TODO: this logic with the breaking stone with pickaxe
                         if(rocksMined < miningDrops.Length){
-                            Item dropItem = GameManager.instance.itemManager.GetItemByName(miningDrops[rocksMined]);
+                            Item dropItem = GameManager.instance.itemManager.GetItemByName(miningDrops[rocksMined++]);
                             GameManager.instance.player.DropItem(dropItem);
-                            rocksMined++;
                         }
 
                         tileManager.SetInteracted(position);

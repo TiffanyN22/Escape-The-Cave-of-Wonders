@@ -2767,7 +2767,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 14.461, y: -11.832}
+  m_AnchoredPosition: {x: 14.461, y: 82}
   m_SizeDelta: {x: 1191.063, y: 717.792}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &328013488
@@ -15287,7 +15287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 616566850}
   - component: {fileID: 616566851}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19447,7 +19447,7 @@ GameObject:
   - component: {fileID: 1159243123}
   - component: {fileID: 1159243124}
   - component: {fileID: 1159243125}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25526,7 +25526,7 @@ GameObject:
   - component: {fileID: 2035856442}
   - component: {fileID: 2035856444}
   - component: {fileID: 2035856445}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
