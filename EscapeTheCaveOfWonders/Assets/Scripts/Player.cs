@@ -42,6 +42,15 @@ public class Player : MonoBehaviour
                     {
                         GameManager.instance.uiManager.TogglePaperStand();
                     }
+                    else if(tileName == "Stream_Interactable" && inventory.toolbar.selectedSlot.itemName == "Carrot Seed"){
+                        //TODO: make pickaxe
+                        inventory.toolbar.selectedSlot.RemoveAll();
+
+                        Item enchantedPickaxe = GameManager.instance.itemManager.GetItemByName("Red Gem");
+                        inventory.toolbar.selectedSlot.AddItem(enchantedPickaxe);
+                        GameManager.instance.uiManager.RefreshInventoryUI("Toolbar");
+                        Debug.Log("Stream interactable!");
+                    }
                 }
 
                 //if (GameManager.instance.tileManager.IsInteractable(position))

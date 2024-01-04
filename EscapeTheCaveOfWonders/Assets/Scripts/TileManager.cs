@@ -8,6 +8,7 @@ public class TileManager : MonoBehaviour
     [SerializeField] private Tilemap interactableMap;
     [SerializeField] private Tile hiddenInteractableTile;
     [SerializeField] private Tile hiddenPaperStandInteractableTile;
+    [SerializeField] private Tile hiddenStreamInteractableTile;
     [SerializeField] private Tile plowedTile;
 
     void Start()
@@ -15,12 +16,18 @@ public class TileManager : MonoBehaviour
         foreach(var position in interactableMap.cellBounds.allPositionsWithin)
         {
             TileBase tile = interactableMap.GetTile(position);
-            if (tile != null && tile.name == "Interactable_Visible")
-            {
-                interactableMap.SetTile(position, hiddenInteractableTile);
-            }
-            else if ((tile != null && tile.name == "Paper_Stand_Interactable_Visible")){
-                interactableMap.SetTile(position, hiddenPaperStandInteractableTile);
+            if (tile != null){ 
+                switch(tile.name){
+                    case "Interactable_Visible":
+                        interactableMap.SetTile(position, hiddenInteractableTile);
+                        break;
+                    case "Paper_Stand_Interactable_Visible":
+                        interactableMap.SetTile(position, hiddenPaperStandInteractableTile);
+                        break;
+                    case "Stream_Interactable_Visible":
+                        interactableMap.SetTile(position, hiddenStreamInteractableTile);
+                        break;
+                }
             }
         }
     }
