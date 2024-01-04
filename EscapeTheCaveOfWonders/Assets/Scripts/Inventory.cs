@@ -161,11 +161,11 @@ public class Inventory
             //TODO: require 9 coins
             int tradeCoinsRequired = 2;
             if(toSlot.itemName == "Coin" && toSlot.count >= tradeCoinsRequired){
-                // Debug.Log("trade success!");
-                Item gem = GameManager.instance.itemManager.GetItemByName("Flying Carpet");
-                GameManager.instance.player.DropItem(gem);
-                GameManager.instance.uiManager.ToggleTradePanel();
-                toSlot.RemoveAll();
+                //Gives user flying carpet
+                Item carpet = GameManager.instance.itemManager.GetItemByName("Flying Carpet");
+                GameManager.instance.player.DropItem(carpet);
+                GameManager.instance.uiManager.ToggleTradePanel(); //close trade panel
+                toSlot.RemoveAll(); //removes coins from trade panel
             }
         }
     }

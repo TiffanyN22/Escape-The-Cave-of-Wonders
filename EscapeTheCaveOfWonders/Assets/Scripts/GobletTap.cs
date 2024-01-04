@@ -10,11 +10,20 @@ public class GobletTap : MonoBehaviour
     public void click(int gobletID){
         // TODO: play sound on click
 
+        //user already got gem
+        if(correctCount > 6){
+            return;
+        }
+
+        //check if tapping in correct order
         if(correctOrder[correctCount] == gobletID){
             correctCount++;
             if(correctCount == 6){
                 Debug.Log("You win!");
-                correctCount = 0;
+
+                Item gem = GameManager.instance.itemManager.GetItemByName("Purple Gem");
+                GameManager.instance.player.DropItem(gem); //drop gem
+                GameManager.instance.uiManager.ToggleGobletStand(); //close goblet stand
             }
         }
         else{
