@@ -158,11 +158,11 @@ public class Inventory
             Slot toSlot = toInventory.slots[toIndex];
             // Debug.Log("trading!");
 
-            //TODO: MAKE COINS
+            //TODO: require 9 coins
             int tradeCoinsRequired = 2;
             if(toSlot.itemName == "Coin" && toSlot.count >= tradeCoinsRequired){
                 // Debug.Log("trade success!");
-                Item gem = GameManager.instance.itemManager.GetItemByName("Red Gem");
+                Item gem = GameManager.instance.itemManager.GetItemByName("Flying Carpet");
                 GameManager.instance.player.DropItem(gem);
                 GameManager.instance.uiManager.ToggleTradePanel();
                 toSlot.RemoveAll();
