@@ -157,12 +157,13 @@ public class Inventory
         //means that its trade --> make more official way with name?
         if(toInventory.slots.Count == 1){
             Slot toSlot = toInventory.slots[toIndex];
-            Debug.Log("trading!");
+            // Debug.Log("trading!");
 
             //TODO: MAKE COINS
-            if(toSlot.itemName == "Carrot Seed" && toSlot.count >= 2){
-                Debug.Log("trade success!");
-                Item gem = GameManager.instance.itemManager.GetItemByName("Carrot Seed");
+            int tradeCoinsRequired = 2;
+            if(toSlot.itemName == "Coin" && toSlot.count >= tradeCoinsRequired){
+                // Debug.Log("trade success!");
+                Item gem = GameManager.instance.itemManager.GetItemByName("Red Gem");
                 GameManager.instance.player.DropItem(gem);
                 GameManager.instance.uiManager.ToggleTradePanel();
                 toSlot.RemoveAll();
