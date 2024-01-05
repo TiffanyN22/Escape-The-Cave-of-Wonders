@@ -8,25 +8,71 @@ public class DrawWithMouse : MonoBehaviour
     private Vector2 previousPosition;
     [SerializeField] float minDistance;
     private Vector2 center;
+    public List<Vector2> treasurePoints = new List<Vector2>();
+    public List<bool> foundTreasureList = new List<bool>();
+
+    private void Awake(){
+        // treasurePoints.Add(new Vector2(2.61f, 2.02f));
+    }
 
     private void Start(){
+        treasurePoints.Add(new Vector2(2.61f, 2.02f));
+        treasurePoints.Add(new Vector2(-0.17f, 0.35f));
+
+        for(int i = 0; i < treasurePoints.Count; i++){
+            foundTreasureList.Add(false);
+        }
         previousPosition = transform.position;
+        Debug.Log("treasure point" + treasurePoints[0]);
     }
 
     private void Update()
     {
         if(Input.GetMouseButton(0)){
-            Debug.Log("Drawing");
+            // Debug.Log("Drawing");
             Vector2 currentPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Debug.Log("Current Position" + currentPosition);
             
             Vector2 drawPos = new Vector2((currentPosition.x * 32f), (currentPosition.y * 30.85f -5.24f));
 
+            if(checkTreasures(currentPosition)){
+                Debug.Log("Winner!!!!");
+            }
             if(Vector2.Distance(currentPosition, previousPosition) > minDistance){
                 line.points.Add(drawPos);
                 line.SetAllDirty();
                 previousPosition = currentPosition;
             }
         }
+    }
+
+    private bool foundTreasure(Vector2 curPos, Vector2 treasurePos){
+        //close enough --> consider to draw over
+        // Debug.Log("treasure x" + treasurePos.x);
+        // Debug.Log("treasure x part 2 " + treasurePoints[0]);
+        // Debug.Log("Cur Position" + curPos + " x diff " + Mathf.Abs(curPos.x - treasurePos.x));
+        // Debug.Log("y diff " + Mathf.Abs(curPos.y - treasurePos.y));
+        return (Mathf.Abs(curPos.x - treasurePos.x) < 0.25) && (Mathf.Abs(curPos.y - treasurePos.y) < 0.25);
+    }
+
+    private bool checkTreasures(Vector2 curPos){
+        for(int i = 0; i < treasurePoints.Count; i++){
+            if(!foundTreasureList[i] && foundTreasure(curPos, treasurePoints[i])){
+                foundTreasureList[i] = true;
+                if(foundAllTreasures()){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private bool foundAllTreasures(){
+        for(int i = 0; i < treasurePoints.Count; i++){
+            if(!foundTreasureList[i]){
+                return false;
+            }
+        }
+        return true;
     }
 }
