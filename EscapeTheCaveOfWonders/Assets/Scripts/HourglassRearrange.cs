@@ -21,10 +21,6 @@ public class HourglassRearrange : MonoBehaviour
             firstSelectIndex = clickedIndex;
             allPuzzlePeices[clickedIndex].tintImage(true);
         } else{
-            // Debug.Log("first select"+firstSelectIndex);
-            // Debug.Log("cur select"+clickedIndex);
-            Debug.Log(idOrder);
-
             allPuzzlePeices[firstSelectIndex].tintImage(false);
 
             allPuzzlePeices[firstSelectIndex].updateImage(allSprites[idOrder[clickedIndex]]);
@@ -37,13 +33,6 @@ public class HourglassRearrange : MonoBehaviour
             firstSelectIndex = -1;
 
             checkOrder();
-
-            // allPuzzlePeices[firstSelectIndex].tintImage(false);
-
-            // HourglassPuzzlePiece temp = allPuzzlePeices[firstSelectIndex].returnPieceInfo();
-            // allPuzzlePeices[firstSelectIndex].updatePuzzlePiece(allPuzzlePeices[clickedIndex]);
-            // allPuzzlePeices[clickedIndex].updatePuzzlePiece(temp);
-            // firstSelectIndex = -1;
         }
 
     }

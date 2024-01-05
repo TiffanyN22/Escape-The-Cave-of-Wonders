@@ -9,6 +9,8 @@ public class TileManager : MonoBehaviour
     [SerializeField] private Tile hiddenInteractableTile;
     [SerializeField] private Tile hiddenPaperStandInteractableTile;
     [SerializeField] private Tile hiddenStreamInteractableTile;
+    [SerializeField] private Tile hiddenPaintingInteractableTile;
+    [SerializeField] private Tile hiddenHourglassInteractableTile;
     [SerializeField] private Tile plowedTile;
 
     void Start()
@@ -26,6 +28,12 @@ public class TileManager : MonoBehaviour
                         break;
                     case "Stream_Interactable_Visible":
                         interactableMap.SetTile(position, hiddenStreamInteractableTile);
+                        break;
+                    case "Painting_Interactable_Visible":
+                        interactableMap.SetTile(position, hiddenPaintingInteractableTile);
+                        break;
+                    case "Hourglass_Interactable_Visible":
+                        interactableMap.SetTile(position, hiddenHourglassInteractableTile);
                         break;
                 }
             }

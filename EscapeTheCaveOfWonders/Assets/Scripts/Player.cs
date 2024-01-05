@@ -59,6 +59,12 @@ public class Player : MonoBehaviour
                         inventory.toolbar.selectedSlot.AddItem(enchantedPickaxe);
                         GameManager.instance.uiManager.RefreshInventoryUI("Toolbar");
                     }
+                    else if(tileName == "Hourglass_Interactable"){
+                        GameManager.instance.uiManager.ToggleHourglassRearrangePanel();
+                    }
+                    else if(tileName == "Painting_Interactable"){
+                        GameManager.instance.uiManager.ToggleHourglassPaintingPanel();
+                    }
                 }
             }
         } 
