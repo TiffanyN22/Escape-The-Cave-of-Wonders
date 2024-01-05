@@ -7,14 +7,9 @@ using UnityEngine.EventSystems;
 
 public class HourglassPuzzle : MonoBehaviour
 {
-    private int blankSpaceIndex = 8;
+    private int blankSpaceIndex = 11;
     public List<HourglassPuzzlePiece> allPuzzlePeices = new List<HourglassPuzzlePiece>();
-    // private HourglassPuzzlePiece blankPuzzlePiece;
     public Sprite blankImage;
-    
-    void Start()
-    {
-    }
 
     public void click(int clickedIndex){
         if (allPuzzlePeices == null){
