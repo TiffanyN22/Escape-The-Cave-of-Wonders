@@ -14,7 +14,8 @@ public class UI_Manager : MonoBehaviour
     public GameObject paperStand;
     public GameObject gobletStand;
     public GameObject tradePanel;
-    public GameObject hourglassPuzzlePanel;
+    public GameObject hourglassPaintingPanel;
+    public GameObject hourglassRearrangePanel;
 
     public static Slot_UI draggedSlot;
     public static Image draggedIcon;
@@ -39,8 +40,11 @@ public class UI_Manager : MonoBehaviour
             else if(tradePanel.activeSelf){
                 ToggleTradePanel();
             }
-            else if (hourglassPuzzlePanel.activeSelf){
-                ToggleHourglassPuzzlePanel();
+            else if (hourglassPaintingPanel.activeSelf){
+                ToggleHourglassPaintingPanel();
+            }
+            else if(hourglassRearrangePanel.activeSelf){
+                ToggleHourglassRearrangePanel();
             }
             else{
                 ToggleInventory();
@@ -56,9 +60,13 @@ public class UI_Manager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.T)){ //TODO: open trade panel with in-game element
             ToggleTradePanel();
         }
-        if(Input.GetKeyDown(KeyCode.H)){ //TODO: open swapping puzzle with in-game element
-            ToggleHourglassPuzzlePanel();
+        if(Input.GetKeyDown(KeyCode.H)){ //TODO: open swapping painting with in-game element
+            ToggleHourglassPaintingPanel();
         }
+        if(Input.GetKeyDown(KeyCode.R)){ //TODO: open swapping puzzle with in-game element
+            ToggleHourglassRearrangePanel();
+        }
+        
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -114,13 +122,20 @@ public class UI_Manager : MonoBehaviour
         tradePanel.SetActive(!tradePanel.activeSelf);
     }
 
-    public void ToggleHourglassPuzzlePanel(){
-        if(hourglassPuzzlePanel == null){
+    public void ToggleHourglassPaintingPanel(){
+        if(hourglassPaintingPanel == null){
             return;
         }
-        hourglassPuzzlePanel.SetActive(!hourglassPuzzlePanel.activeSelf);
+        hourglassPaintingPanel.SetActive(!hourglassPaintingPanel.activeSelf);
     }
 
+    public void ToggleHourglassRearrangePanel(){
+        if(hourglassRearrangePanel == null){
+            return;
+        }
+        hourglassRearrangePanel.SetActive(!hourglassRearrangePanel.activeSelf);
+    }
+    
     public void RefreshInventoryUI(string inventoryName)
     {
         if (inventoryUIByName.ContainsKey(inventoryName))
