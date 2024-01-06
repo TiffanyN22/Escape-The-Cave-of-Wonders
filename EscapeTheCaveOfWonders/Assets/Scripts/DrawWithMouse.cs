@@ -11,13 +11,11 @@ public class DrawWithMouse : MonoBehaviour
     public List<Vector2> treasurePoints = new List<Vector2>();
     public List<bool> foundTreasureList = new List<bool>();
 
-    private void Awake(){
-        // treasurePoints.Add(new Vector2(2.61f, 2.02f));
-    }
-
     private void Start(){
-        treasurePoints.Add(new Vector2(2.61f, 2.02f));
-        treasurePoints.Add(new Vector2(-0.17f, 0.35f));
+        treasurePoints.Add(new Vector2(-1.49f, -1.78f));
+        treasurePoints.Add(new Vector2(-0.58f, 0.04f));
+        treasurePoints.Add(new Vector2(1.56f, 0.75f));
+        treasurePoints.Add(new Vector2(1.65f, -1.04f));
 
         for(int i = 0; i < treasurePoints.Count; i++){
             foundTreasureList.Add(false);
@@ -29,7 +27,6 @@ public class DrawWithMouse : MonoBehaviour
     private void Update()
     {
         if(Input.GetMouseButton(0)){
-            // Debug.Log("Drawing");
             Vector2 currentPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Debug.Log("Current Position" + currentPosition);
             
@@ -48,10 +45,6 @@ public class DrawWithMouse : MonoBehaviour
 
     private bool foundTreasure(Vector2 curPos, Vector2 treasurePos){
         //close enough --> consider to draw over
-        // Debug.Log("treasure x" + treasurePos.x);
-        // Debug.Log("treasure x part 2 " + treasurePoints[0]);
-        // Debug.Log("Cur Position" + curPos + " x diff " + Mathf.Abs(curPos.x - treasurePos.x));
-        // Debug.Log("y diff " + Mathf.Abs(curPos.y - treasurePos.y));
         return (Mathf.Abs(curPos.x - treasurePos.x) < 0.25) && (Mathf.Abs(curPos.y - treasurePos.y) < 0.25);
     }
 
