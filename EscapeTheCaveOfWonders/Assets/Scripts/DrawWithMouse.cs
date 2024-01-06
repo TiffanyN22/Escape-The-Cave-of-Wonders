@@ -21,19 +21,23 @@ public class DrawWithMouse : MonoBehaviour
             foundTreasureList.Add(false);
         }
         previousPosition = transform.position;
-        Debug.Log("treasure point" + treasurePoints[0]);
+        // Debug.Log("treasure point" + treasurePoints[0]);
     }
 
     private void Update()
     {
         if(Input.GetMouseButton(0)){
             Vector2 currentPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Debug.Log("Current Position" + currentPosition);
+            // Debug.Log("Current Position" + currentPosition);
             
+            //TODO: make sure position aligns with where paper stand is (currently for start) or based on canvas
             Vector2 drawPos = new Vector2((currentPosition.x * 32f), (currentPosition.y * 30.85f -5.24f));
 
             if(checkTreasures(currentPosition)){
                 Debug.Log("Winner!!!!");
+                GameManager.instance.uiManager.ToggleTreasureMapPanel();
+                GameManager.instance.uiManager.ToggleVaultCluePanel();
+                clearMap();
             }
             if(Vector2.Distance(currentPosition, previousPosition) > minDistance){
                 line.points.Add(drawPos);
@@ -67,5 +71,13 @@ public class DrawWithMouse : MonoBehaviour
             }
         }
         return true;
+    }
+
+    private void clearMap(){
+        for(int i = 0; i < treasurePoints.Count; i++){
+            foundTreasureList[i] = false;
+        }
+        line.points.Clear();
+        line.SetAllDirty();
     }
 }

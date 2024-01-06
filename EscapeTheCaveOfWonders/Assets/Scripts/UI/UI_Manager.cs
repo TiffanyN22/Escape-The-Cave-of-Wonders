@@ -16,6 +16,8 @@ public class UI_Manager : MonoBehaviour
     public GameObject tradePanel;
     public GameObject hourglassPaintingPanel;
     public GameObject hourglassRearrangePanel;
+    public GameObject treasureMapPanel;
+    public GameObject vaultCluePanel;
 
     public static Slot_UI draggedSlot;
     public static Image draggedIcon;
@@ -46,6 +48,12 @@ public class UI_Manager : MonoBehaviour
             else if(hourglassRearrangePanel.activeSelf){
                 ToggleHourglassRearrangePanel();
             }
+            else if(treasureMapPanel.activeSelf){
+                ToggleTreasureMapPanel();
+            }
+            else if(vaultCluePanel.activeSelf){
+                ToggleVaultCluePanel();
+            }
             else{
                 ToggleInventory();
             }
@@ -65,6 +73,9 @@ public class UI_Manager : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.R)){ //TODO: open swapping puzzle with in-game element
             ToggleHourglassRearrangePanel();
+        }
+        if(Input.GetKeyDown(KeyCode.M)){ //TODO: open swapping puzzle with in-game element
+            ToggleTreasureMapPanel();
         }
         
 
@@ -135,7 +146,21 @@ public class UI_Manager : MonoBehaviour
         }
         hourglassRearrangePanel.SetActive(!hourglassRearrangePanel.activeSelf);
     }
-    
+
+    public void ToggleTreasureMapPanel(){
+        if(treasureMapPanel == null){
+            return;
+        }
+        treasureMapPanel.SetActive(!treasureMapPanel.activeSelf);
+    }
+
+    public void ToggleVaultCluePanel(){
+        if(vaultCluePanel == null){
+            return;
+        }
+        vaultCluePanel.SetActive(!vaultCluePanel.activeSelf);
+    }
+
     public void RefreshInventoryUI(string inventoryName)
     {
         if (inventoryUIByName.ContainsKey(inventoryName))

@@ -51,6 +51,10 @@ public class Player : MonoBehaviour
                     {
                         GameManager.instance.uiManager.TogglePaperStand();
                     }
+                    else if (tileName == "Paper_Stand_Interactable" && inventory.toolbar.selectedSlot.itemName == "Treasure Map")
+                    {
+                        GameManager.instance.uiManager.ToggleTreasureMapPanel();
+                    }
                     else if(tileName == "Stream_Interactable" && inventory.toolbar.selectedSlot.itemName == "Carrot Seed"){
                         //TODO: make pickaxe
                         inventory.toolbar.selectedSlot.RemoveAll();
