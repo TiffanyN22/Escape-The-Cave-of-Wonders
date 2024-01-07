@@ -20,7 +20,7 @@ public class VaultPointer : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("angle: " + transform.rotation.z);
+        // Debug.Log("angle: " + transform.rotation.z);
         Vector3 mousePos = myCam.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetMouseButtonDown(0))
         {

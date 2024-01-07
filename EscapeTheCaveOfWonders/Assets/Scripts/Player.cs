@@ -36,7 +36,8 @@ public class Player : MonoBehaviour
 
                 if (!string.IsNullOrWhiteSpace(tileName))
                 {
-                    if (tileName == "Interactable" && inventory.toolbar.selectedSlot.itemName == "Hoe")
+                    if (tileName == "Interactable" && 
+                        (inventory.toolbar.selectedSlot.itemName == "Pickaxe" ||inventory.toolbar.selectedSlot.itemName == "Enchanted Pickaxe"))
                     {
                         //TODO: this logic with the breaking stone with pickaxe
                         if(rocksMined < miningDrops.Length){
@@ -55,11 +56,10 @@ public class Player : MonoBehaviour
                     {
                         GameManager.instance.uiManager.ToggleTreasureMapPanel();
                     }
-                    else if(tileName == "Stream_Interactable" && inventory.toolbar.selectedSlot.itemName == "Carrot Seed"){
-                        //TODO: make pickaxe
+                    else if(tileName == "Stream_Interactable" && inventory.toolbar.selectedSlot.itemName == "Pickaxe"){
                         inventory.toolbar.selectedSlot.RemoveAll();
 
-                        Item enchantedPickaxe = GameManager.instance.itemManager.GetItemByName("Red Gem");
+                        Item enchantedPickaxe = GameManager.instance.itemManager.GetItemByName("Enchanted Pickaxe");
                         inventory.toolbar.selectedSlot.AddItem(enchantedPickaxe);
                         GameManager.instance.uiManager.RefreshInventoryUI("Toolbar");
                     }
@@ -68,6 +68,9 @@ public class Player : MonoBehaviour
                     }
                     else if(tileName == "Painting_Interactable"){
                         GameManager.instance.uiManager.ToggleHourglassPaintingPanel();
+                    }
+                    else if (tileName == "Trader_Interactable"){
+                        GameManager.instance.uiManager.ToggleTradePanel();
                     }
                 }
             }
