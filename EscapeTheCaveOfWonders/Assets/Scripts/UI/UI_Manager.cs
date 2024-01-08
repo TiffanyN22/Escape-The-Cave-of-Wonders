@@ -18,6 +18,7 @@ public class UI_Manager : MonoBehaviour
     public GameObject hourglassRearrangePanel;
     public GameObject treasureMapPanel;
     public GameObject vaultCluePanel;
+    public GameObject victoryPanel;
 
     public static Slot_UI draggedSlot;
     public static Image draggedIcon;
@@ -159,6 +160,13 @@ public class UI_Manager : MonoBehaviour
             return;
         }
         vaultCluePanel.SetActive(!vaultCluePanel.activeSelf);
+    }
+
+    public void ToggleVictoryPanel(){
+        if(victoryPanel == null){
+            return;
+        }
+        victoryPanel.SetActive(!victoryPanel.activeSelf);
     }
 
     public void RefreshInventoryUI(string inventoryName)

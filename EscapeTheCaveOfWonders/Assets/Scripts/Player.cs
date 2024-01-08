@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public string[] gemPlaced = {"", "", "", ""}; //TODO: make private
     private string[] correctGemOrder = {"Purple", "Green", "Red", "Blue"};
     private int rocksMined = 0;
+    private bool escaped = false;
 
     private void Start()
     {
@@ -186,6 +187,9 @@ public class Player : MonoBehaviour
                 return;
             }
         }
-        Debug.Log("You win!!!!");
+        if(!escaped){
+            GameManager.instance.uiManager.ToggleVictoryPanel();
+            escaped = true;
+        }
     }
 }
