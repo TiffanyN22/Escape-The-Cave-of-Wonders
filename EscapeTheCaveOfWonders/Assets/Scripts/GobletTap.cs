@@ -6,10 +6,11 @@ public class GobletTap : MonoBehaviour
 {
     private int[] correctOrder = { 3, 0, 2, 5, 1, 4 };
     private int correctCount = 0;
+    [SerializeField] private AudioSource fullAudio;
+    [SerializeField] private List<AudioSource> clickAudio;
     
     public void click(int gobletID){
-        // TODO: play sound on click
-
+        clickAudio[correctOrder[gobletID]].Play(0);
         //user already got gem
         if(correctCount > 6){
             return;
@@ -37,5 +38,10 @@ public class GobletTap : MonoBehaviour
         Debug.Log("Show goblet stand running");
         GameManager.instance.uiManager.ToggleGobletStand();
         return;
+    }
+
+    public void playFullAudio(){
+        Debug.Log("playing full audio");
+        fullAudio.Play(0);
     }
 }
