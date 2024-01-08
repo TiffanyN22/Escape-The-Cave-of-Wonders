@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     private TileManager tileManager;
 
     private string[] miningDrops = {"Coin", "Scroll", "Coin", "Coin", "Scroll", "Scroll", "Coin", "Scroll", "Scroll", "Coin"};
+    public string[] gemPlaced = {"", "", "", ""}; //TODO: make private
+    private string[] correctGemOrder = {"Purple", "Green", "Red", "Blue"};
     private int rocksMined = 0;
 
     private void Start()
@@ -72,6 +74,15 @@ public class Player : MonoBehaviour
                     else if (tileName == "Trader_Interactable"){
                         GameManager.instance.uiManager.ToggleTradePanel();
                     }
+                    else if (tileName.Contains("Gem_Interactable") && inventory.toolbar.selectedSlot.itemName.Contains("Gem")){
+                        // Debug.Log("The gems are interacting");
+                        PlaceGem(tileName);
+                    }
+                    else if (tileName.Contains("Gem_Interactable")){
+                        // Debug.Log("The gems are interacting");
+                        SetGemTile(tileName);
+                    }
+                    
                 }
             }
         } 
@@ -94,5 +105,87 @@ public class Player : MonoBehaviour
         {
             DropItem(item);
         }
+    }
+
+    //GEM PUZZLE CODE
+    public void PlaceGem(string tileName){
+        switch(inventory.toolbar.selectedSlot.itemName){
+            case "Blue Gem":
+                Debug.Log("Placing Blue Gem");
+                SetGemTile(tileName, "Blue");
+                break;
+            case "Green Gem":
+                Debug.Log("Placing Green Gem");
+                SetGemTile(tileName, "Green");
+                break;
+            case "Purple Gem":
+                Debug.Log("Placing Purple Gem");
+                SetGemTile(tileName, "Purple");
+                break;
+            case "Red Gem":
+                Debug.Log("Placing Red Gem");
+                SetGemTile(tileName, "Red");
+                break;
+        }
+    }
+
+    public void SetGemTile(string tileName, string gemColor = ""){
+        switch (tileName){
+            case "Purple_Gem_Interactable":
+                if(gemPlaced[0] == "" && !string.IsNullOrWhiteSpace(gemColor)){
+                    SetGem(0, gemColor);
+                } else if (gemPlaced[0] != "") {
+                    RemoveGem(0);
+                }
+                break;
+            case "Green_Gem_Interactable":
+                if(gemPlaced[1] == "" && !string.IsNullOrWhiteSpace(gemColor)){
+                    SetGem(1, gemColor);
+                } else if (gemPlaced[1] != "") {
+                    RemoveGem(1);
+                }
+                break;
+            case "Red_Gem_Interactable":
+                if(gemPlaced[2] == "" && !string.IsNullOrWhiteSpace(gemColor)){
+                    SetGem(2, gemColor);
+                } else if (gemPlaced[2] != "") {
+                    RemoveGem(2);
+                }
+                break;
+            case "Blue_Gem_Interactable":
+                if(gemPlaced[3] == "" && !string.IsNullOrWhiteSpace(gemColor)){
+                    SetGem(3, gemColor);
+                } 
+                else if (gemPlaced[3] != "") {
+                    RemoveGem(3);
+                }
+                break;
+        }
+    }
+
+    private void RemoveGem(int index){
+        Vector3Int position = new Vector3Int((int)transform.position.x, (int)transform.position.y, 0);
+        Item gem = GameManager.instance.itemManager.GetItemByName(gemPlaced[index] + " Gem");
+        DropItem(gem);
+        gemPlaced[index] = "";
+        tileManager.SetGem(position, "None");
+    }
+
+    private void SetGem(int index, string gemColor){
+        Vector3Int position = new Vector3Int((int)transform.position.x, (int)transform.position.y, 0);
+        gemPlaced[index] = gemColor;
+        tileManager.SetGem(position, gemColor);
+        inventory.toolbar.selectedSlot.RemoveAll();
+        GameManager.instance.uiManager.RefreshInventoryUI("Toolbar");
+        checkWin();
+    }
+
+    private void checkWin(){
+        for(int i = 0; i < gemPlaced.Length; i++){
+            if(gemPlaced[i] != correctGemOrder[i]){
+                return;
+            }
+        }
+        Debug.Log("You win!!!!");
     }
 }
