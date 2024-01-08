@@ -13,8 +13,6 @@ public class TileManager : MonoBehaviour
     [SerializeField] private Tile hiddenPaintingInteractableTile;
     [SerializeField] private Tile hiddenHourglassInteractableTile;
     [SerializeField] private Tile hiddenTraderInteractableTile;
-    [SerializeField] private Tile hiddenGobletInteractableTile;
-
     [SerializeField] private Tile hiddenRedGemInteractableTile;
     [SerializeField] private Tile hiddenBlueGemInteractableTile;
     [SerializeField] private Tile hiddenGreenGemInteractableTile;
@@ -51,9 +49,6 @@ public class TileManager : MonoBehaviour
                     case "Trader_Interactable_Visible":
                         interactableMap.SetTile(position, hiddenTraderInteractableTile);
                         break;
-                    case "Goblet_Stand_Interactable_Visible":
-                        interactableMap.SetTile(position, hiddenGobletInteractableTile);
-                        break;
                     case "Red_Gem_Interactable_Visible":
                         interactableMap.SetTile(position, hiddenRedGemInteractableTile);
                         break;
@@ -70,6 +65,17 @@ public class TileManager : MonoBehaviour
             }
         }
     }
+
+    //public bool IsInteractable(Vector3Int position)
+    //{
+    //    TileBase tile = interactableMap.GetTile(position);
+    //    if (tile != null)
+    //    {
+    //        return tile.name == "Interactable";
+    //    }
+    //    return false;
+    //}
+   
 
     public void SetInteracted(Vector3Int position)
     {

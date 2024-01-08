@@ -74,9 +74,6 @@ public class Player : MonoBehaviour
                     else if (tileName == "Trader_Interactable"){
                         GameManager.instance.uiManager.ToggleTradePanel();
                     }
-                    else if(tileName == "Goblet_Stand_Interactable"){
-                        GameManager.instance.uiManager.ToggleGobletStand();
-                    }
                     else if (tileName.Contains("Gem_Interactable") && inventory.toolbar.selectedSlot.itemName.Contains("Gem")){
                         // Debug.Log("The gems are interacting");
                         PlaceGem(tileName);
