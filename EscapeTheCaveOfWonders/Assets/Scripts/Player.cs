@@ -40,33 +40,8 @@ public class Player : MonoBehaviour
 
                 if (!string.IsNullOrWhiteSpace(tileName))
                 {
-                    if (tileName == "Interactable" && 
-                        (inventory.toolbar.selectedSlot.itemName == "Pickaxe" ||inventory.toolbar.selectedSlot.itemName == "Enchanted Pickaxe"))
-                    {
-                        Debug.Log("breaking rock interactable");
-                        if(rocksMined < miningDrops.Length){
-                            Debug.Log("dropping item");
-                            Item dropItem = GameManager.instance.itemManager.GetItemByName(miningDrops[rocksMined++]);
-                            GameManager.instance.player.DropItem(dropItem);
-                        }
-
-                        tileManager.SetInteracted(position);
-                    } 
-                    else if(tileName == "Border_Rock_Interactable" && 
-                        (inventory.toolbar.selectedSlot.itemName == "Pickaxe" ||inventory.toolbar.selectedSlot.itemName == "Enchanted Pickaxe")){
-                        tileManager.SetInteracted(position);
-                        borderRocksMined++;
-                        if (borderRocksMined == 2){
-                            Physics2D.IgnoreLayerCollision(6,7);
-                        }
-                    }
-                    else if (tileName == "Special_Rock_Interactable" && inventory.toolbar.selectedSlot.itemName == "Enchanted Pickaxe"){
-                        Item greenGem = GameManager.instance.itemManager.GetItemByName("Green Gem");
-                        GameManager.instance.player.DropItem(greenGem);
-                        tileManager.SetInteracted(position);
-                    }
-                    else if (tileName == "Paper_Stand_Interactable" && inventory.toolbar.selectedSlot.itemName == "Scroll"
-                        && inventory.toolbar.selectedSlot.count >= 2) //TODO: count is 9 --> drop more paper
+                    if (tileName == "Paper_Stand_Interactable" && inventory.toolbar.selectedSlot.itemName == "Scroll"
+                        && inventory.toolbar.selectedSlot.count >= 9)
                     {
                         GameManager.instance.uiManager.TogglePaperStand();
                     }
