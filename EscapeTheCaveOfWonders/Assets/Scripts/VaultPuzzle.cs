@@ -28,7 +28,7 @@ public class VaultPuzzle : MonoBehaviour
 
     private void DropGem()
     {
-        Item gem = GameManager.instance.itemManager.GetItemByName("Green Gem");
+        Item gem = GameManager.instance.itemManager.GetItemByName("Red Gem");
         Vector2 spawnLocation = transform.position;
         Vector2 spawnOffset = new Vector2(1f, Random.Range(-1f, 0f));
 

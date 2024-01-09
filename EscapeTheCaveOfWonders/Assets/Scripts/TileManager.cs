@@ -13,11 +13,15 @@ public class TileManager : MonoBehaviour
     [SerializeField] private Tile hiddenPaintingInteractableTile;
     [SerializeField] private Tile hiddenHourglassInteractableTile;
     [SerializeField] private Tile hiddenTraderInteractableTile;
+    [SerializeField] private Tile hiddenGobletStandInteractableTile;
+    [SerializeField] private Tile hiddenBorderRockInteractableTile;
+    [SerializeField] private Tile hiddenSpecialRockStandInteractableTile;
+
     [SerializeField] private Tile hiddenRedGemInteractableTile;
     [SerializeField] private Tile hiddenBlueGemInteractableTile;
     [SerializeField] private Tile hiddenGreenGemInteractableTile;
     [SerializeField] private Tile hiddenPurpleGemInteractableTile;
-    [SerializeField] private Tile plowedTile;
+    [SerializeField] private Tile brokenRockTile;
     [SerializeField] private Tile redGemTile; //TODO: update
     [SerializeField] private Tile greenGemTile;
     [SerializeField] private Tile blueGemTile;
@@ -49,6 +53,15 @@ public class TileManager : MonoBehaviour
                     case "Trader_Interactable_Visible":
                         interactableMap.SetTile(position, hiddenTraderInteractableTile);
                         break;
+                    case "Goblet_Stand_Interactable_Visible":
+                        interactableMap.SetTile(position, hiddenGobletStandInteractableTile);
+                        break;
+                    case "Border_Rock_Interactable_Visible":
+                        interactableMap.SetTile(position, hiddenBorderRockInteractableTile);
+                        break;
+                    case "Special_Rock_Interactable_Visible":
+                        interactableMap.SetTile(position, hiddenSpecialRockStandInteractableTile);
+                        break;
                     case "Red_Gem_Interactable_Visible":
                         interactableMap.SetTile(position, hiddenRedGemInteractableTile);
                         break;
@@ -79,7 +92,7 @@ public class TileManager : MonoBehaviour
 
     public void SetInteracted(Vector3Int position)
     {
-        interactableMap.SetTile(position, plowedTile);
+        interactableMap.SetTile(position, brokenRockTile);
     }
 
     public void SetGem(Vector3Int position, string gemColor)

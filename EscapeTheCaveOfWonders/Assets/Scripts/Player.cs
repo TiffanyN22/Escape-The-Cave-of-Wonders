@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public string[] gemPlaced = {"", "", "", ""}; //TODO: make private
     private string[] correctGemOrder = {"Purple", "Green", "Red", "Blue"};
     private int rocksMined = 0;
+    private int borderRocksMined = 0;
     private bool escaped = false;
 
     private void Start()
@@ -43,13 +44,28 @@ public class Player : MonoBehaviour
                         (inventory.toolbar.selectedSlot.itemName == "Pickaxe" ||inventory.toolbar.selectedSlot.itemName == "Enchanted Pickaxe"))
                     {
                         //TODO: this logic with the breaking stone with pickaxe
+                        Debug.Log("breaking rock interactable");
                         if(rocksMined < miningDrops.Length){
+                            Debug.Log("dropping item");
                             Item dropItem = GameManager.instance.itemManager.GetItemByName(miningDrops[rocksMined++]);
                             GameManager.instance.player.DropItem(dropItem);
                         }
 
                         tileManager.SetInteracted(position);
                     } 
+                    else if(tileName == "Border_Rock_Interactable" && 
+                        (inventory.toolbar.selectedSlot.itemName == "Pickaxe" ||inventory.toolbar.selectedSlot.itemName == "Enchanted Pickaxe")){
+                        tileManager.SetInteracted(position);
+                        borderRocksMined++;
+                        if (borderRocksMined == 2){
+                            Physics2D.IgnoreLayerCollision(6,7);
+                        }
+                    }
+                    else if (tileName == "Special_Rock_Interactable" && inventory.toolbar.selectedSlot.itemName == "Enchanted Pickaxe"){
+                        Item greenGem = GameManager.instance.itemManager.GetItemByName("Green Gem");
+                        GameManager.instance.player.DropItem(greenGem);
+                        tileManager.SetInteracted(position);
+                    }
                     else if (tileName == "Paper_Stand_Interactable" && inventory.toolbar.selectedSlot.itemName == "Scroll"
                         && inventory.toolbar.selectedSlot.count >= 2) //TODO: count is 9
                     {
@@ -74,6 +90,9 @@ public class Player : MonoBehaviour
                     }
                     else if (tileName == "Trader_Interactable"){
                         GameManager.instance.uiManager.ToggleTradePanel();
+                    }
+                    else if(tileName == "Goblet_Stand_Interactable"){
+                        GameManager.instance.uiManager.ToggleGobletStand();
                     }
                     else if (tileName.Contains("Gem_Interactable") && inventory.toolbar.selectedSlot.itemName.Contains("Gem")){
                         // Debug.Log("The gems are interacting");
