@@ -90,7 +90,7 @@ public class Inventory
         }
     }
     
-    public void Add(Item item)
+    public bool Add(Item item)
     {
         //check if item exists and can add
         foreach(Slot slot in slots)
@@ -98,7 +98,7 @@ public class Inventory
             if(slot.itemName == item.data.itemName && slot.CanAddItem(item.data.itemName))
             {
                 slot.AddItem(item);
-                return;
+                return true;
             }
         }
 
@@ -108,9 +108,12 @@ public class Inventory
             if(slot.itemName == "")
             {
                 slot.AddItem(item);
-                return;
+                return true;
             }
         }
+
+        //return false if no room to add
+        return false;
     }
 
     public void Remove(int index)

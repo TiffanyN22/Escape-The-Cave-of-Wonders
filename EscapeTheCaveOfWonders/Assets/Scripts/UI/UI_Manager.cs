@@ -60,22 +60,23 @@ public class UI_Manager : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.P)){ //TODO: open paper stand with in-game element
+        //TODO: delete
+        if(Input.GetKeyDown(KeyCode.P)){
             TogglePaperStand();
         }
-        if(Input.GetKeyDown(KeyCode.G)){ //TODO: open goblet stand with in-game element
+        if(Input.GetKeyDown(KeyCode.G)){ 
             ToggleGobletStand();
         }
-        if(Input.GetKeyDown(KeyCode.T)){ //TODO: open trade panel with in-game element
+        if(Input.GetKeyDown(KeyCode.T)){
             ToggleTradePanel();
         }
-        if(Input.GetKeyDown(KeyCode.H)){ //TODO: open swapping painting with in-game element
+        if(Input.GetKeyDown(KeyCode.H)){ 
             ToggleHourglassPaintingPanel();
         }
-        if(Input.GetKeyDown(KeyCode.R)){ //TODO: open swapping puzzle with in-game element
+        if(Input.GetKeyDown(KeyCode.R)){ 
             ToggleHourglassRearrangePanel();
         }
-        if(Input.GetKeyDown(KeyCode.M)){ //TODO: open swapping puzzle with in-game element
+        if(Input.GetKeyDown(KeyCode.M)){ 
             ToggleTreasureMapPanel();
         }
         

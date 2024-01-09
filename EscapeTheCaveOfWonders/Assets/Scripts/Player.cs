@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     private TileManager tileManager;
 
     private string[] miningDrops = {"Coin", "Scroll", "Coin", "Coin", "Scroll", "Scroll", "Coin", "Scroll", "Scroll", "Coin"};
-    public string[] gemPlaced = {"", "", "", ""}; //TODO: make private
+    private string[] gemPlaced = {"", "", "", ""}; 
     private string[] correctGemOrder = {"Purple", "Green", "Red", "Blue"};
     private int rocksMined = 0;
     private int borderRocksMined = 0;
@@ -43,7 +43,6 @@ public class Player : MonoBehaviour
                     if (tileName == "Interactable" && 
                         (inventory.toolbar.selectedSlot.itemName == "Pickaxe" ||inventory.toolbar.selectedSlot.itemName == "Enchanted Pickaxe"))
                     {
-                        //TODO: this logic with the breaking stone with pickaxe
                         Debug.Log("breaking rock interactable");
                         if(rocksMined < miningDrops.Length){
                             Debug.Log("dropping item");
@@ -67,7 +66,7 @@ public class Player : MonoBehaviour
                         tileManager.SetInteracted(position);
                     }
                     else if (tileName == "Paper_Stand_Interactable" && inventory.toolbar.selectedSlot.itemName == "Scroll"
-                        && inventory.toolbar.selectedSlot.count >= 2) //TODO: count is 9
+                        && inventory.toolbar.selectedSlot.count >= 2) //TODO: count is 9 --> drop more paper
                     {
                         GameManager.instance.uiManager.TogglePaperStand();
                     }
