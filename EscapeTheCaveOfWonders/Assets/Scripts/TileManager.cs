@@ -28,6 +28,9 @@ public class TileManager : MonoBehaviour
     [SerializeField] private Tile purpleGemTile;
     [SerializeField] private Tile emptyGemTile;
 
+    [SerializeField] List<Tile> shadowWallTile;
+    [SerializeField] List<Tile> darkShadowWallTile;
+
     void Start()
     {
         foreach(var position in interactableMap.cellBounds.allPositionsWithin)
@@ -97,12 +100,25 @@ public class TileManager : MonoBehaviour
 
     public void SetLight(Vector3Int position)
     {
-        interactableMap.SetTile(position, greenGemTile);//TODO: fix tile
+        Vector3Int positionTop = new Vector3Int(position.x, position.y + 2, 0);
+        interactableMap.SetTile(positionTop, shadowWallTile[position.x - 21]);
+        Vector3Int positionMiddle = new Vector3Int(position.x,position.y + 1, 0);
+        interactableMap.SetTile(positionMiddle, shadowWallTile[position.x - 21 + 8]);
+        Vector3Int positionBottom = new Vector3Int(position.x, position.y, 0);
+        interactableMap.SetTile(positionBottom, shadowWallTile[position.x - 21 + 16]);
+         
     }
 
     public void SetShadow(Vector3Int position)
     {
-        interactableMap.SetTile(position, brokenRockTile);
+        Vector3Int positionTop = new Vector3Int(position.x, position.y + 2, 0);
+        interactableMap.SetTile(positionTop, darkShadowWallTile[0]);
+        Vector3Int positionMiddle = new Vector3Int(position.x,position.y + 1, 0);
+        interactableMap.SetTile(positionMiddle, darkShadowWallTile[1]);
+        Vector3Int positionBottom = new Vector3Int(position.x, position.y, 0);
+        interactableMap.SetTile(positionBottom, darkShadowWallTile[2]);
+
+        // interactableMap.SetTile(position, brokenRockTile);
     }
 
     public void SetGem(Vector3Int position, string gemColor)

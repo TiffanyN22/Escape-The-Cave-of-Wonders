@@ -28,7 +28,7 @@ public class DrawWithMouse : MonoBehaviour
     {
         if(Input.GetMouseButton(0)){
             Vector2 currentPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Debug.Log("Current Position" + currentPosition);
+            // Debug.Log("Current Position" + currentPosition);
             
             Vector2 drawPos = new Vector2((currentPosition.x * 32.909f - 999.117f), (currentPosition.y * 32.432f - 597.397f));
 
