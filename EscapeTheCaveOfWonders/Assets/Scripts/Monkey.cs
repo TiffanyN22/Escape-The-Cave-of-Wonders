@@ -17,7 +17,7 @@ public class Monkey : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (!droppedAxe)
+        if (!droppedAxe && GameManager.instance.player.inventory.toolbar.selectedSlot.itemName == "Key")
         {
             Debug.Log("clicked!");
             render.sprite = imgSprite;
