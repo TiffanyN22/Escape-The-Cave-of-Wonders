@@ -77,6 +77,13 @@ public class Player : MonoBehaviour
                 }
             }
         } 
+        else if(Input.GetKeyDown(KeyCode.Y)){
+            Respawn();
+        }
+    }
+
+    private void Respawn(){
+        transform.position = new Vector3(62, 48, 0);
     }
 
     public void DropItem(Item item)
@@ -178,11 +185,12 @@ public class Player : MonoBehaviour
             }
         }
         if(!escaped){
-            GameManager.instance.uiManager.ToggleVictoryPanel();
+            tileManager.SetDoor();
             escaped = true;
         }
     }
 
+    //SHADOW WALL 
     private void OnTriggerEnter2D(Collider2D other){
         Debug.Log("on trigger running");
         if (other.gameObject.tag == "ShadowWall" && inventory.toolbar.selectedSlot.itemName == "Latern")
@@ -191,6 +199,9 @@ public class Player : MonoBehaviour
                 (int)other.transform.position.y, 0);
             // Vector3Int position = new Vector3Int(21,20, 0);
             tileManager.SetLight(position);
+        }
+        else if (other.gameObject.tag == "EscapeDoor" && escaped){
+            GameManager.instance.uiManager.SetVictoryPanel();
         }
     }
     

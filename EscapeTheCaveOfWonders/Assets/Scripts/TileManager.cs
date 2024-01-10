@@ -121,6 +121,15 @@ public class TileManager : MonoBehaviour
         // interactableMap.SetTile(position, brokenRockTile);
     }
 
+    public void SetDoor(){
+        for(int x = 36; x < 40; x++){
+            for(int y = 48; y < 50; y++){
+                Vector3Int position = new Vector3Int(x, y, 0);
+                interactableMap.SetTile(position, emptyGemTile); //TODO: make door art
+            }
+        }
+    }
+
     public void SetGem(Vector3Int position, string gemColor)
     {
         // Debug.Log("Setting gem: " + gemColor);

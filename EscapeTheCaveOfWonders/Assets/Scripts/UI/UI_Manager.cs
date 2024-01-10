@@ -163,11 +163,11 @@ public class UI_Manager : MonoBehaviour
         vaultCluePanel.SetActive(!vaultCluePanel.activeSelf);
     }
 
-    public void ToggleVictoryPanel(){
+    public void SetVictoryPanel(){
         if(victoryPanel == null){
             return;
         }
-        victoryPanel.SetActive(!victoryPanel.activeSelf);
+        victoryPanel.SetActive(true);
     }
 
     public void RefreshInventoryUI(string inventoryName)
