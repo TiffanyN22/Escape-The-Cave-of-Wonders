@@ -12,10 +12,10 @@ public class DrawWithMouse : MonoBehaviour
     public List<bool> foundTreasureList = new List<bool>();
 
     private void Start(){
-        treasurePoints.Add(new Vector2(-1.49f, -1.78f));
-        treasurePoints.Add(new Vector2(-0.58f, 0.04f));
-        treasurePoints.Add(new Vector2(1.56f, 0.75f));
-        treasurePoints.Add(new Vector2(1.65f, -1.04f));
+        treasurePoints.Add(new Vector2(28.98f, 16.31f));
+        treasurePoints.Add(new Vector2(29.82f, 18.18f));
+        treasurePoints.Add(new Vector2(32.08f, 17.17f));
+        treasurePoints.Add(new Vector2(32.06f, 18.92f));
 
         for(int i = 0; i < treasurePoints.Count; i++){
             foundTreasureList.Add(false);
@@ -28,10 +28,9 @@ public class DrawWithMouse : MonoBehaviour
     {
         if(Input.GetMouseButton(0)){
             Vector2 currentPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            // Debug.Log("Current Position" + currentPosition);
+            Debug.Log("Current Position" + currentPosition);
             
-            //TODO: make sure position aligns with where paper stand is (currently for start) or based on canvas
-            Vector2 drawPos = new Vector2((currentPosition.x * 32f), (currentPosition.y * 30.85f -5.24f));
+            Vector2 drawPos = new Vector2((currentPosition.x * 32.909f - 999.117f), (currentPosition.y * 32.432f - 597.397f));
 
             if(checkTreasures(currentPosition)){
                 Debug.Log("Winner!!!!");
