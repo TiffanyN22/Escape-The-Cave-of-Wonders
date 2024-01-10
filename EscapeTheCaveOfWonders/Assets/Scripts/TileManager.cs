@@ -92,6 +92,16 @@ public class TileManager : MonoBehaviour
 
     public void SetInteracted(Vector3Int position)
     {
+        interactableMap.SetTile(position, brokenRockTile); 
+    }
+
+    public void SetLight(Vector3Int position)
+    {
+        interactableMap.SetTile(position, greenGemTile);//TODO: fix tile
+    }
+
+    public void SetShadow(Vector3Int position)
+    {
         interactableMap.SetTile(position, brokenRockTile);
     }
 

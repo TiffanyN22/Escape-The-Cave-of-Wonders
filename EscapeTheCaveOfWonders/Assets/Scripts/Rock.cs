@@ -12,7 +12,6 @@ public class Rock : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("rock starting");
         render = GetComponent<SpriteRenderer>();
     }
 

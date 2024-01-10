@@ -12,7 +12,6 @@ public class Monkey : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("monkey business");
         render = GetComponent<SpriteRenderer>();
     }
 

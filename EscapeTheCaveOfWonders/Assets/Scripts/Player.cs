@@ -9,11 +9,8 @@ public class Player : MonoBehaviour
     public InventoryManager inventory;
     private TileManager tileManager;
 
-    private string[] miningDrops = {"Coin", "Scroll", "Coin", "Coin", "Scroll", "Scroll", "Coin", "Scroll", "Scroll", "Coin"};
     private string[] gemPlaced = {"", "", "", ""}; 
     private string[] correctGemOrder = {"Purple", "Green", "Red", "Blue"};
-    private int rocksMined = 0;
-    private int borderRocksMined = 0;
     private bool escaped = false;
 
     private void Start()
@@ -185,4 +182,26 @@ public class Player : MonoBehaviour
             escaped = true;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D other){
+        Debug.Log("on trigger running");
+        if (other.gameObject.tag == "ShadowWall" && inventory.toolbar.selectedSlot.itemName == "Latern")
+        {
+            Vector3Int position = new Vector3Int((int)other.transform.position.x,
+                (int)other.transform.position.y, 0);
+            // Vector3Int position = new Vector3Int(21,20, 0);
+            tileManager.SetLight(position);
+        }
+    }
+    
+    private void OnTriggerExit2D(Collider2D other){
+        Debug.Log("on trigger exit running");
+        if (other.gameObject.tag == "ShadowWall")
+        {
+            Vector3Int position = new Vector3Int((int)other.transform.position.x,
+                (int)other.transform.position.y, 0);
+            tileManager.SetShadow(position);
+        }
+    }
+
 }
