@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ShadowWall
   - EscapeDoor
+  - Fire
   layers:
   - Default
   - TransparentFX

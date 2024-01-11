@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Respawn(){
+    public void Respawn(){
         transform.position = new Vector3(62, 48, 0);
     }
 
