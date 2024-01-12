@@ -60,27 +60,6 @@ public class UI_Manager : MonoBehaviour
             }
         }
 
-        //TODO: delete
-        if(Input.GetKeyDown(KeyCode.P)){
-            TogglePaperStand();
-        }
-        if(Input.GetKeyDown(KeyCode.G)){ 
-            ToggleGobletStand();
-        }
-        if(Input.GetKeyDown(KeyCode.T)){
-            ToggleTradePanel();
-        }
-        if(Input.GetKeyDown(KeyCode.H)){ 
-            ToggleHourglassPaintingPanel();
-        }
-        if(Input.GetKeyDown(KeyCode.R)){ 
-            ToggleHourglassRearrangePanel();
-        }
-        if(Input.GetKeyDown(KeyCode.M)){ 
-            ToggleTreasureMapPanel();
-        }
-        
-
         if (Input.GetKey(KeyCode.LeftShift))
         {
             dragSingle = true;

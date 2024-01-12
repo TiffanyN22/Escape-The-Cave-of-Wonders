@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Fire : MonoBehaviour
 {
-    [SerializeField] public Sprite fireImg;
-    [SerializeField] public Sprite smokeImg;
+    [SerializeField] private Sprite fireImg;
+    [SerializeField] private Sprite smokeImg;
     public SpriteRenderer render;
 
     public enum fireState{safe, smoke, fire}
@@ -39,14 +39,6 @@ public class Fire : MonoBehaviour
             yield return new WaitForSeconds(2);
             currentState = fireState.safe; 
             render.color = new Color(255, 255, 255, 0);
-
-            // fireOn = !fireOn;
-
-            // if(fireOn){
-            //     render.color = new Color(255, 255, 255, 255);
-            // } else{
-            //     render.color = new Color(255, 255, 255, 0);
-            // }
         }
     }
 }

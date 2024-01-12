@@ -22,7 +22,7 @@ public class TileManager : MonoBehaviour
     [SerializeField] private Tile hiddenGreenGemInteractableTile;
     [SerializeField] private Tile hiddenPurpleGemInteractableTile;
     [SerializeField] private Tile brokenRockTile;
-    [SerializeField] private Tile redGemTile; //TODO: update
+    [SerializeField] private Tile redGemTile;
     [SerializeField] private Tile greenGemTile;
     [SerializeField] private Tile blueGemTile;
     [SerializeField] private Tile purpleGemTile;
@@ -101,22 +101,23 @@ public class TileManager : MonoBehaviour
     public void SetLight(Vector3Int position)
     {
         Vector3Int positionTop = new Vector3Int(position.x, position.y + 2, 0);
-        interactableMap.SetTile(positionTop, shadowWallTile[position.x - 21]);
+        interactableMap.SetTile(positionTop, shadowWallTile[position.x - 20]);
         Vector3Int positionMiddle = new Vector3Int(position.x,position.y + 1, 0);
-        interactableMap.SetTile(positionMiddle, shadowWallTile[position.x - 21 + 8]);
+        interactableMap.SetTile(positionMiddle, shadowWallTile[position.x - 20 + 8]);
         Vector3Int positionBottom = new Vector3Int(position.x, position.y, 0);
-        interactableMap.SetTile(positionBottom, shadowWallTile[position.x - 21 + 16]);
+        interactableMap.SetTile(positionBottom, shadowWallTile[position.x - 20 + 16]);
          
     }
+    
 
     public void SetShadow(Vector3Int position)
     {
         Vector3Int positionTop = new Vector3Int(position.x, position.y + 2, 0);
-        interactableMap.SetTile(positionTop, darkShadowWallTile[0]);
+        interactableMap.SetTile(positionTop, darkShadowWallTile[position.x - 20]);
         Vector3Int positionMiddle = new Vector3Int(position.x,position.y + 1, 0);
-        interactableMap.SetTile(positionMiddle, darkShadowWallTile[1]);
+        interactableMap.SetTile(positionMiddle, darkShadowWallTile[position.x - 20 + 8]);
         Vector3Int positionBottom = new Vector3Int(position.x, position.y, 0);
-        interactableMap.SetTile(positionBottom, darkShadowWallTile[2]);
+        interactableMap.SetTile(positionBottom, darkShadowWallTile[position.x - 20 + 16]);
 
         // interactableMap.SetTile(position, brokenRockTile);
     }

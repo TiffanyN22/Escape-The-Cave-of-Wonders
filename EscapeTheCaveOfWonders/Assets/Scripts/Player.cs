@@ -192,7 +192,6 @@ public class Player : MonoBehaviour
 
     //SHADOW WALL 
     private void OnTriggerEnter2D(Collider2D other){
-        Debug.Log("on trigger running");
         if (other.gameObject.tag == "ShadowWall" && inventory.toolbar.selectedSlot.itemName == "Latern")
         {
             Vector3Int position = new Vector3Int((int)other.transform.position.x,
@@ -206,7 +205,6 @@ public class Player : MonoBehaviour
     }
     
     private void OnTriggerExit2D(Collider2D other){
-        Debug.Log("on trigger exit running");
         if (other.gameObject.tag == "ShadowWall")
         {
             Vector3Int position = new Vector3Int((int)other.transform.position.x,
