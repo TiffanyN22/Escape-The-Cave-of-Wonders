@@ -6,13 +6,19 @@ public class Fire : MonoBehaviour
 {
     [SerializeField] private Sprite fireImg;
     [SerializeField] private Sprite smokeImg;
+    [SerializeField] private RuntimeAnimatorController fireAnim;
+    [SerializeField] private RuntimeAnimatorController smokeAnim;
+
     public SpriteRenderer render;
+    public Animator animator;
 
     public enum fireState{safe, smoke, fire}
     public fireState currentState = fireState.safe;
 
     private void Start(){
         render = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+
         StartCoroutine(fireCoroutine());
     }
 
@@ -31,10 +37,13 @@ public class Fire : MonoBehaviour
             currentState = fireState.smoke; 
             render.color = new Color(255, 255, 255, 255);
             render.sprite = smokeImg;
+            animator.runtimeAnimatorController = smokeAnim;
+            
 
             yield return new WaitForSeconds(1);
             currentState = fireState.fire; 
             render.sprite = fireImg;
+            animator.runtimeAnimatorController = fireAnim;
 
             yield return new WaitForSeconds(2);
             currentState = fireState.safe; 

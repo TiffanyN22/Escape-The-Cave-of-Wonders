@@ -19,6 +19,7 @@ public class UI_Manager : MonoBehaviour
     public GameObject treasureMapPanel;
     public GameObject vaultCluePanel;
     public GameObject victoryPanel;
+    public GameObject howToPlayPanel;
 
     public static Slot_UI draggedSlot;
     public static Image draggedIcon;
@@ -67,6 +68,10 @@ public class UI_Manager : MonoBehaviour
         else
         {
             dragSingle = false;
+        }
+
+        if(Input.GetKey(KeyCode.Escape)){
+            SetHowToPlayPanel(true);
         }
     }
 
@@ -147,6 +152,13 @@ public class UI_Manager : MonoBehaviour
             return;
         }
         victoryPanel.SetActive(true);
+    }
+
+    public void SetHowToPlayPanel(bool set){
+        if(howToPlayPanel == null){
+            return;
+        }
+        howToPlayPanel.SetActive(set);
     }
 
     public void RefreshInventoryUI(string inventoryName)

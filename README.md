@@ -15,6 +15,7 @@ This project utilizes a range of Unity features, which includes:
 - Playing audio with Audio Source
 - Utilizing rigidbody physics to move an object
 - Implementing static decoration and collectable items
+- Using Animator's runtimeAnimatorController to set the fire and smoke animations
 - More!
 
 ## Author
