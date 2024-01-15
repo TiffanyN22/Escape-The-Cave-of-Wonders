@@ -56,6 +56,9 @@ public class UI_Manager : MonoBehaviour
             }
             else if(vaultCluePanel.activeSelf){
                 ToggleVaultCluePanel();
+            } 
+            else if (howToPlayPanel.activeSelf){
+                SetHowToPlayPanel(false);
             }
             else{
                 ToggleInventory();

@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     //public int numCarrotSeed = 0;
     public InventoryManager inventory;
     private TileManager tileManager;
+    [SerializeField] private GameObject door;
 
     private string[] gemPlaced = {"", "", "", ""}; 
     private string[] correctGemOrder = {"Purple", "Green", "Red", "Blue"};
@@ -178,6 +179,10 @@ public class Player : MonoBehaviour
         checkWin();
     }
 
+    private void OpenDoor(){
+        door.GetComponent<Animator>().SetBool("gemsIn", true);
+    }
+
     private void checkWin(){
         for(int i = 0; i < gemPlaced.Length; i++){
             if(gemPlaced[i] != correctGemOrder[i]){
@@ -185,7 +190,8 @@ public class Player : MonoBehaviour
             }
         }
         if(!escaped){
-            tileManager.SetDoor();
+            // tileManager.SetDoor();
+            OpenDoor();
             escaped = true;
         }
     }
