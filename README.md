@@ -6,6 +6,7 @@ Escape the Cave of Wonders is a 2D Escape Room Game created in Unity. Inspired b
 ## Technology
 This project utilizes a range of Unity features, which includes:
 - Interacting with and updating the tilemap
+- Animator for character walking and fire animations
 - Character walking animation
 - Canvas pop ups for the user's inventory and puzzles
 - Detecting keyboard and mouse input for both GameObjects and UI canvases
@@ -15,7 +16,6 @@ This project utilizes a range of Unity features, which includes:
 - Playing audio with Audio Source
 - Utilizing rigidbody physics to move an object
 - Implementing static decoration and collectable items
-- Using Animator's runtimeAnimatorController to set the fire and smoke animations
 - More!
 
 ## Author

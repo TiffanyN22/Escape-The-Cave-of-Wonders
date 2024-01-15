@@ -6,11 +6,10 @@ public class Fire : MonoBehaviour
 {
     [SerializeField] private Sprite fireImg;
     [SerializeField] private Sprite smokeImg;
-    [SerializeField] private RuntimeAnimatorController fireAnim;
-    [SerializeField] private RuntimeAnimatorController smokeAnim;
+    public Animator animator;
 
     public SpriteRenderer render;
-    public Animator animator;
+    // public Animator animator;
 
     public enum fireState{safe, smoke, fire}
     public fireState currentState = fireState.safe;
@@ -34,20 +33,19 @@ public class Fire : MonoBehaviour
     {
         while(true){
             yield return new WaitForSeconds(3);
+            animator.SetInteger("State", 1);
             currentState = fireState.smoke; 
-            render.color = new Color(255, 255, 255, 255);
             render.sprite = smokeImg;
-            animator.runtimeAnimatorController = smokeAnim;
+            
+            yield return new WaitForSeconds(1.5f);
+            animator.SetInteger("State", 2);
+            render.sprite = fireImg;
+            currentState = fireState.fire; 
             
 
-            yield return new WaitForSeconds(1);
-            currentState = fireState.fire; 
-            render.sprite = fireImg;
-            animator.runtimeAnimatorController = fireAnim;
-
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(3);
+            animator.SetInteger("State", 0);
             currentState = fireState.safe; 
-            render.color = new Color(255, 255, 255, 0);
         }
     }
 }
