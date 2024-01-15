@@ -20,6 +20,7 @@ public class UI_Manager : MonoBehaviour
     public GameObject vaultCluePanel;
     public GameObject victoryPanel;
     public GameObject howToPlayPanel;
+    public GameObject openingPanel;
 
     public static Slot_UI draggedSlot;
     public static Image draggedIcon;
@@ -159,6 +160,13 @@ public class UI_Manager : MonoBehaviour
             return;
         }
         howToPlayPanel.SetActive(set);
+    }
+
+    public void SetOpeningPanel(bool set){
+        if(openingPanel == null){
+            return;
+        }
+        openingPanel.SetActive(set);
     }
 
     public void RefreshInventoryUI(string inventoryName)
