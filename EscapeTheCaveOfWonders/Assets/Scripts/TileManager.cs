@@ -16,6 +16,8 @@ public class TileManager : MonoBehaviour
     [SerializeField] private Tile hiddenGobletStandInteractableTile;
     [SerializeField] private Tile hiddenBorderRockInteractableTile;
     [SerializeField] private Tile hiddenSpecialRockStandInteractableTile;
+    [SerializeField] private Tile hiddenRiverPaintingInteractableTile;
+    [SerializeField] private Tile hiddenChessInteractableTile;
 
     [SerializeField] private Tile hiddenRedGemInteractableTile;
     [SerializeField] private Tile hiddenBlueGemInteractableTile;
@@ -76,6 +78,12 @@ public class TileManager : MonoBehaviour
                         break;
                     case "Purple_Gem_Interactable_Visible":
                         interactableMap.SetTile(position, hiddenPurpleGemInteractableTile);
+                        break;
+                    case "River_Painting_Interactable_Visible":
+                        interactableMap.SetTile(position, hiddenRiverPaintingInteractableTile);
+                        break;
+                    case "Chess_Interactable_Visible":
+                        interactableMap.SetTile(position, hiddenChessInteractableTile);
                         break;
                 }
             }
