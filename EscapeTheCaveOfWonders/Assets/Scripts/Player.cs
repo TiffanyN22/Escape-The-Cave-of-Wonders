@@ -69,6 +69,9 @@ public class Player : MonoBehaviour
                     else if(tileName == "River_Painting_Interactable" && inventory.toolbar.selectedSlot.itemName == "Shovel"){
                         GameManager.instance.uiManager.ToggleRiverPuzzlePanel();
                     }
+                    else if(tileName == "Chess_Interactable"){
+                        GameManager.instance.uiManager.ToggleChessPanel();
+                    }
                     else if (tileName.Contains("Gem_Interactable") && inventory.toolbar.selectedSlot.itemName.Contains("Gem")){
                         // Debug.Log("The gems are interacting");
                         PlaceGem(tileName);

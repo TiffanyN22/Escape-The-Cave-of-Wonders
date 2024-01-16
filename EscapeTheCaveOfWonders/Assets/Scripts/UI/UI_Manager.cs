@@ -23,6 +23,7 @@ public class UI_Manager : MonoBehaviour
     public GameObject openingPanel;
     public GameObject riverPuzzlePanel;
     public GameObject lockPuzzlePanel;
+    public GameObject chessPanel;
 
     public static Slot_UI draggedSlot;
     public static Image draggedIcon;
@@ -67,6 +68,9 @@ public class UI_Manager : MonoBehaviour
             }
             else if(lockPuzzlePanel.activeSelf){
                 ToggleLockPuzzlePanel();
+            }
+            else if (chessPanel.activeSelf){
+                ToggleChessPanel();
             }
             else{
                 ToggleInventory();
@@ -171,6 +175,13 @@ public class UI_Manager : MonoBehaviour
             return;
         }
         lockPuzzlePanel.SetActive(!lockPuzzlePanel.activeSelf);
+    }
+
+    public void ToggleChessPanel(){
+        if(chessPanel == null){
+            return;
+        }
+        chessPanel.SetActive(!chessPanel.activeSelf);
     }
 
     public void SetVictoryPanel(){
