@@ -11,12 +11,6 @@ public class ChessPuzzle : MonoBehaviour
     private int firstSelectIndex = -1;
      private int redIndex = -1;
     // first they click 15, then 7
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log("chess puzzle started");
-    }
 
     public void click(int clickedIndex){
         Debug.Log("CLICK!");
