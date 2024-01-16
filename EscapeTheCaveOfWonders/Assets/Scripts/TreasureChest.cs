@@ -15,6 +15,11 @@ public class TreasureChest : MonoBehaviour
 
     void OnMouseDown()
     {
+        GameManager.instance.uiManager.ToggleLockPuzzlePanel();
+    }
+
+    public void DropKey()
+    {
         if (!droppedKey)
         {
             render.sprite = imgSprite;
@@ -29,6 +34,5 @@ public class TreasureChest : MonoBehaviour
             droppedKey = true;
         
         }
-
     }
 }

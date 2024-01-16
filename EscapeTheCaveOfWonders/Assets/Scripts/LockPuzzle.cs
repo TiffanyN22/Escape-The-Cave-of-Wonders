@@ -6,7 +6,7 @@ using TMPro;
 
 public class LockPuzzle : MonoBehaviour
 {
-
+    [SerializeField] private TreasureChest chest;
     [SerializeField] private List<TextMeshProUGUI> lockSelection = new List<TextMeshProUGUI>();
     private string[] correctOrder = {"B", "2", "B", "1"};
 
@@ -51,7 +51,8 @@ public class LockPuzzle : MonoBehaviour
         }
 
         if(checkWin()){
-            Debug.Log("lock winnerrr");
+            GameManager.instance.uiManager.ToggleLockPuzzlePanel();
+            chest.DropKey();
         }
     }
 
