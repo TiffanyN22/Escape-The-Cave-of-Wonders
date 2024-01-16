@@ -6,23 +6,13 @@ public class RiverPuzzle : MonoBehaviour
 {
 
     public List<Transform> riverIcons = new List<Transform>();
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private bool gotGem = false;
 
     public void click(int clickIndex){
         riverIcons[clickIndex].Rotate(0,0,90);
         if(checkWin()){
-            Debug.Log("Win!");
+            dropGem();
+            GameManager.instance.uiManager.ToggleRiverPuzzlePanel();
         }
     }
 
@@ -33,5 +23,14 @@ public class RiverPuzzle : MonoBehaviour
             }
         }
         return true;
+    }
+
+    public void dropGem(){
+        if(!gotGem){
+            // Debug.Log("You win!!");
+            Item gem = GameManager.instance.itemManager.GetItemByName("Blue Gem");
+            GameManager.instance.player.DropItem(gem);
+            gotGem = true;
+        }
     }
 }

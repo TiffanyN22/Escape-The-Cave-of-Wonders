@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
                     else if(tileName == "Goblet_Stand_Interactable"){
                         GameManager.instance.uiManager.ToggleGobletStand();
                     }
-                    else if(tileName == "River_Painting_Interactable"){
+                    else if(tileName == "River_Painting_Interactable" && inventory.toolbar.selectedSlot.itemName == "Shovel"){
                         GameManager.instance.uiManager.ToggleRiverPuzzlePanel();
                     }
                     else if (tileName.Contains("Gem_Interactable") && inventory.toolbar.selectedSlot.itemName.Contains("Gem")){

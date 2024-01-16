@@ -9,7 +9,7 @@ public class HourglassRearrange : MonoBehaviour
     public int[] idOrder = {0,1,2,3,4}; //order changes based on user clicks
     private int firstSelectIndex = -1;
     private int[] correctOrder = {4,2,0,1,3};
-    private bool gotGem = false;
+    private bool gotShovel = false;
 
     public void click(int clickedIndex){
         if (allPuzzlePeices == null){
@@ -51,13 +51,13 @@ public class HourglassRearrange : MonoBehaviour
     }
 
     public void checkOrder(){
-        if(isCorrectOrder() && !gotGem){
+        if(isCorrectOrder() && !gotShovel){
             Debug.Log("You win!!");
 
-            Item gem = GameManager.instance.itemManager.GetItemByName("Blue Gem");
-            GameManager.instance.player.DropItem(gem);
+            Item shovel = GameManager.instance.itemManager.GetItemByName("Shovel");
+            GameManager.instance.player.DropItem(shovel);
             GameManager.instance.uiManager.ToggleHourglassRearrangePanel();
-            gotGem = true;
+            gotShovel = true;
         }
     }
 }
