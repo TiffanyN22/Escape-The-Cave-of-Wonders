@@ -19,3 +19,6 @@ This project utilizes a range of Unity features, which includes:
 
 ## Author
 Tiffany Nguyen and Kara Barrese both coded the puzzles and created the art used in this game
+
+
+![](https://i.ibb.co/yhKvcpN/Readme-Banner1.png)
