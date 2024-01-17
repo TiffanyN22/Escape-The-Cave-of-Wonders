@@ -1,7 +1,7 @@
 # Escape The Cave of Wonders
 
 ## About
-Escape the Cave of Wonders is a 2D Escape Room Game created in Unity. Inspired by the Disney movie Aladdin, the goal is to help Aladdin escape by finding the 4 gems needed to open the door by completing a series of 10 puzzles scattered around the cave, which includes navigating fire mazes, piecing together puzzles, solving written riddles, gathering materials and tools, and more!
+Escape the Cave of Wonders is a 2D Escape Room Game created in Unity. Inspired by the Disney movie Aladdin, the goal is to help Aladdin escape by finding the 4 gems needed to open the door by completing a series of 14 puzzles scattered around the cave, which includes navigating fire mazes, piecing together puzzles, solving written riddles, gathering materials and tools, and more!
 
 ## Technology
 This project utilizes a range of Unity features, which includes:
@@ -21,4 +21,4 @@ This project utilizes a range of Unity features, which includes:
 Tiffany Nguyen and Kara Barrese both coded the puzzles and created the art used in this game
 
 
-![](https://i.ibb.co/yhKvcpN/Readme-Banner1.png)
+![](./Escape%20the%20Cave%20of%20Wonders%20Image.png)
