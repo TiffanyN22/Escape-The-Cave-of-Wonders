@@ -12,9 +12,15 @@ public class ChessPuzzle : MonoBehaviour
      private int redIndex = -1;
     // first they click 15, then 7
 
+    //  public void pieceInfo(int clickedIndex){
+    //     Debug.Log("CLICK!");
+    //  }
+
     public void click(int clickedIndex){
-        Debug.Log("CLICK!");
-        if (firstSelectIndex == -1){
+        //Debug.Log("Clicked");
+        //Debug.Log(allChessPieces[clickedIndex].GetComponent<ChessPiece>().isBlack());
+
+        if ((firstSelectIndex == -1)&&(allChessPieces[clickedIndex].GetComponent<ChessPiece>().isBlack())){
             Debug.Log("CLICKED 1st");
             if(redIndex!= -1)
             {

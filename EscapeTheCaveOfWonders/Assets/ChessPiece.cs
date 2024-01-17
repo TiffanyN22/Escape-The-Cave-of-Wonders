@@ -9,10 +9,15 @@ public class ChessPiece : MonoBehaviour
     public Sprite imgSprite;
     public int hi;
     bool showImage;
+    public bool black;
     // Start is called before the first frame update
     void Start()
     {
         // image = GetComponent<Image>();
+    }
+
+    public bool isBlack(){
+        return black;
     }
     public void updateImage(){
      }
